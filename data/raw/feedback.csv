@@ -1,0 +1,13 @@
+PRAGMA defer_foreign_keys=TRUE;
+CREATE TABLE feedback (
+  id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+  session_id          TEXT NOT NULL,
+  experience_rating   INTEGER,
+  first_time          TEXT,
+  times_taken         INTEGER,
+  substance_use       TEXT,
+  substance_specify   TEXT,
+  general_comments    TEXT,
+  saved_at            TEXT NOT NULL,
+  FOREIGN KEY (session_id) REFERENCES sessions(session_id)
+);

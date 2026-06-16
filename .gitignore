@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log
+
+# Cached embeddings & big binaries (regenerable)
+analysis_cache/
+*.pkl
+glove.840B.300d.txt
+glove.840B.300d.zip
+
+# Build artifacts that are easy to re-derive
+analysis_outputs/
+*.html
+*.aux
+*.log
+*.out
+
+# Raw SQLite kept out of the repo (>100MB, parquets in data/ replay the paper)
+*.sqlite

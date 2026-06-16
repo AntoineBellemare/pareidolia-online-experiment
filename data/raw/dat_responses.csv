@@ -1,0 +1,17 @@
+PRAGMA defer_foreign_keys=TRUE;
+CREATE TABLE dat_responses (
+  id              INTEGER PRIMARY KEY AUTOINCREMENT,
+  session_id      TEXT NOT NULL,
+  word1           TEXT,
+  word2           TEXT,
+  word3           TEXT,
+  word4           TEXT,
+  word5           TEXT,
+  word6           TEXT,
+  word7           TEXT,
+  word8           TEXT,
+  word9           TEXT,
+  word10          TEXT,
+  saved_at        TEXT NOT NULL,
+  FOREIGN KEY (session_id) REFERENCES sessions(session_id)
+);

@@ -1,0 +1,16 @@
+PRAGMA defer_foreign_keys=TRUE;
+CREATE TABLE sessions (
+  session_id      TEXT PRIMARY KEY,
+  email           TEXT NOT NULL,
+  meditation_time TEXT,          -- 'morning' | 'evening'
+  meditation_when TEXT,          -- 'before' | 'after'
+  age             INTEGER,
+  primary_language TEXT,
+  started_at      TEXT NOT NULL, meditation_years INTEGER, profession TEXT,
+  FOREIGN KEY (email) REFERENCES participants(email)
+);
+INSERT INTO "sessions" ("session_id","email","meditation_time","meditation_when","age","primary_language","started_at","meditation_years","profession") VALUES('1773823657990-3b03de9f-8def-48cb-9985-46ea0ee1dc8c','test@test.com','morning','before',NULL,NULL,'2026-03-18T08:47:37.950Z',NULL,NULL);
+INSERT INTO "sessions" ("session_id","email","meditation_time","meditation_when","age","primary_language","started_at","meditation_years","profession") VALUES('1773823789314-f0c11d86-1291-4ae5-8aca-478b2b60e477','antoine.bellemare9@gmail.com','morning','before',NULL,NULL,'2026-03-18T08:49:48.907Z',NULL,NULL);
+INSERT INTO "sessions" ("session_id","email","meditation_time","meditation_when","age","primary_language","started_at","meditation_years","profession") VALUES('1773824131946-8303115a-0c80-44d0-8650-1ed3b3a5df12','antoine.bellemare9@gmail.com','morning','after',NULL,NULL,'2026-03-18T08:55:31.934Z',NULL,NULL);
+INSERT INTO "sessions" ("session_id","email","meditation_time","meditation_when","age","primary_language","started_at","meditation_years","profession") VALUES('1773824397145-3f429ba5-39cb-47b6-8c96-624d48c00ae9','antoine.bellemare9@gmail.com','morning','after',NULL,NULL,'2026-03-18T08:59:57.138Z',NULL,NULL);
+INSERT INTO "sessions" ("session_id","email","meditation_time","meditation_when","age","primary_language","started_at","meditation_years","profession") VALUES('1773824416498-88006ded-a9bd-405a-8271-2d5f223eaed5','test@gmail.com','morning','after',22,'English','2026-03-18T09:00:16.468Z',10,'Artist');

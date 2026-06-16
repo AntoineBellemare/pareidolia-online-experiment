@@ -1,0 +1,13 @@
+{
+  "name": "pareidolia-online-paper",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Word manuscript builder for the pareidolia paper.",
+  "scripts": {
+    "build:docx": "node paper/build_word.js"
+  },
+  "dependencies": {
+    "docx": "^9.0.2",
+    "image-size": "^2.0.2"
+  }
+}

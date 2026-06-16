@@ -1,0 +1,8 @@
+PRAGMA defer_foreign_keys=TRUE;
+CREATE TABLE participants (
+  email           TEXT PRIMARY KEY,
+  created_at      TEXT NOT NULL
+);
+INSERT INTO "participants" ("email","created_at") VALUES('test@test.com','2026-03-18T08:47:37.950Z');
+INSERT INTO "participants" ("email","created_at") VALUES('antoine.bellemare9@gmail.com','2026-03-18T08:49:48.907Z');
+INSERT INTO "participants" ("email","created_at") VALUES('test@gmail.com','2026-03-18T09:00:16.468Z');
