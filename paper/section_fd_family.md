@@ -30,7 +30,7 @@ expected progression from global, coherent forms at low complexity to
 fine, repeated structure at high complexity.
 
 The same gradient is visible at the percept level (Fig. X, panel b):
-the 99 individual words reported on at least 30 trials span a
+the 160 individual words reported on at least 20 trials span a
 preferred-FD range of roughly 1.31 to 1.62, with the family means
 falling along the heatmap-derived ordering. The result formalises the
 qualitative content shift documented in Fig. 2 as a continuous mapping
@@ -57,4 +57,4 @@ three measured fractal dimensions
 (FD12: 1.27, FD14: 1.49, FD16: 1.67;
 see Materials and Methods, *Stimuli*); a per-percept preferred FD was
 computed analogously by averaging the FD of every image on which the
-word was reported, restricted to words with at least 30 reports.
+word was reported, restricted to words with at least 20 reports.

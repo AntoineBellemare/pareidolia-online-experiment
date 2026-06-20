@@ -374,8 +374,8 @@ faces, objects) through 1.49 (animals) to 1.54 (mythical creatures,
 abstract textures, plants), recovering the expected progression from
 global, coherent forms at low complexity to fine, repeated structure
 at high complexity. The same gradient is visible at the percept
-level (Fig. 5b): the 99 individual words reported on at least 30
-trials span a preferred-FD range of roughly 1.31 to 1.62, with the
+level (Fig. 5b): the 160 individual words reported on at least 20
+trials span a preferred-FD range of roughly 1.29 to 1.62, with the
 family means falling along the heatmap-derived ordering. The result
 formalises the qualitative content shift documented in Fig. 3 as a
 continuous mapping between stimulus complexity and the spatial scale
@@ -389,10 +389,10 @@ of the meanings observers extract.</p>
      "across FD within family; red = the family peaks at this FD. "
      "Rows ordered by each family's rate-weighted preferred FD, "
      "smooth (top) to rough (bottom). (b) Preferred FD per individual "
-     "percept word with at least 30 reports (dots; mean FD of images "
-     "where the word was reported), grouped by family with the family "
-     "mean shown as a horizontal bar. Family coverage is 59% of all "
-     "valid percept tokens.",
+     "percept word with at least 20 reports (160 percepts; dots = mean "
+     "FD of images where the word was reported), grouped by family with "
+     "the family mean shown as a horizontal bar. Family coverage is "
+     "59% of all valid percept tokens.",
      "fig5")}
 
 <h3>Observers largely disagree on what they see, but agreement decreases

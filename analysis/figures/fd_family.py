@@ -19,7 +19,7 @@ that observers match fractal dimension to a family's spatial structure:
 We also compute each family's continuous **preferred FD** (rate-weighted
 mean FD), which orders the families along a global-form to fine-texture
 axis, plus a per-percept preferred FD (mean FD of the images on which
-each word was reported, restricted to words with ≥ 30 reports).
+each word was reported, restricted to words with ≥ 20 reports).
 
 **Taxonomy.** The eight families here are a hand-curated, coarse-grained
 view independent of the BERT-centroid classifier in
@@ -234,12 +234,16 @@ def preferred_fd(fams: list[str], M: np.ndarray) -> dict[str, float]:
     return out
 
 
-def word_preferred_fd(trials: pd.DataFrame, min_reports: int = 30
+def word_preferred_fd(trials: pd.DataFrame, min_reports: int = 20
                        ) -> pd.DataFrame:
     """Per-percept preferred FD = mean FD of the images where it was reported.
 
     Restricted to words that (i) appear at least ``min_reports`` times and
-    (ii) belong to one of the families above.
+    (ii) belong to one of the families above. The default threshold of 20
+    keeps the per-word minimum meaningful while showing enough density in
+    each family panel of the strip plot (Fig. 5b); the original source
+    script used 30, which was tuned for a wider trial pool (all
+    participants, not just the notebook cohort).
     """
     w2f = _word2family()
     fd_sum: dict[str, float] = defaultdict(float)
@@ -358,7 +362,7 @@ def figure_paper(fams: list[str], Z: np.ndarray, wdf: pd.DataFrame,
 
 # ─── runner ────────────────────────────────────────────────────────────────
 
-def main(show: bool = True, min_reports: int = 30) -> None:
+def main(show: bool = True, min_reports: int = 20) -> None:
     trials = _load_trial_words()
     print(f"Trials in cohort: {len(trials):,} "
           f"({trials['user_id'].nunique()} participants, "
@@ -405,8 +409,9 @@ def main(show: bool = True, min_reports: int = 30) -> None:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-show", action="store_true")
-    ap.add_argument("--min-reports", type=int, default=30,
+    ap.add_argument("--min-reports", type=int, default=20,
                     help="word-level: minimum reports for a percept to "
-                         "appear in the strip plot")
+                         "appear in the strip plot (default 20; the "
+                         "source script used 30 with a wider trial pool)")
     args = ap.parse_args()
     main(show=not args.no_show, min_reports=args.min_reports)
