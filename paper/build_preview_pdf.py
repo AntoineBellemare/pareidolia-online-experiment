@@ -225,6 +225,66 @@ percepts.</p>
      "denote significant pair-wise Wilcoxon signed-rank contrasts.",
      "fig1")}
 
+<h3>Image-statistics features predict per-image pareidolia rate.</h3>
+<p>Beyond the discrete FD12/FD14/FD16 contrast, individual stimuli
+within the same FD level varied widely in how often participants
+reported a pareidolic percept (per-image rate range 0.50 to 0.95,
+median 0.76). To ask which low-level image statistics drive this
+variability, we extracted 24 features from each of the 300 stimuli,
+spanning intensity statistics (mean, SD, skewness, kurtosis, pixel
+entropy), the radially averaged power-spectrum slope (β of the
+1/<em>f</em><sup>β</sup> fit) and low / mid / high frequency band
+shares, spatial structure (Sobel edge magnitude, local-contrast mean
+and SD, count and size statistics of connected components binarised
+at mean intensity), and five symmetry measures (left-right and
+top-bottom pixel symmetry, gradient-orientation symmetry,
+coarse-downsampled symmetry, and Fourier-magnitude symmetry;
+Materials and Methods).</p>
+
+<p>Two image properties stood out as positive correlates of pareidolia
+rate (Fig. 2). The power-spectrum slope (steeper slope = stronger
+low-frequency dominance) was the single strongest positive predictor
+(<em>r</em> = +0.37, <em>P</em> = 2.5 × 10<sup>-11</sup>), and the
+low-frequency band share showed the same effect (<em>r</em> = +0.34,
+<em>P</em> = 2.1 × 10<sup>-9</sup>). Symmetry contributed in the
+same direction: top-bottom pixel symmetry, left-right pixel symmetry,
+Fourier-magnitude symmetry, and gradient-orientation symmetry all
+correlated positively with pareidolia rate (<em>r</em> = +0.17 to
++0.24, all <em>P</em> &lt; 0.005). On the other side, fragmented and
+high-contrast images suppressed pareidolia: Sobel edge SD,
+local-contrast SD, local-contrast mean, edge mean, and the count of
+connected components were the most negative predictors
+(<em>r</em> = −0.35 to −0.38, all <em>P</em> &lt; 10<sup>-9</sup>).
+A random-forest regression on the full feature set (5-fold CV)
+captured a small but reliable amount of the per-image variance in
+pareidolia rate (<em>R</em><sup>2</sup> = 0.08 ± 0.07), with
+permutation feature importance again putting symmetry (top-bottom and
+gradient L-R) and the spectral slope at the top. Qualitatively, the
+highest-pareidolia images are smooth, low-frequency FD12 silhouettes
+that elicit canonical percepts (<em>bear</em>, <em>dog</em>,
+<em>face</em>, <em>rabbit</em>, <em>fish</em>), whereas the
+lowest-pareidolia images are dense, high-frequency FD16 textures that
+fragment into many small components and elicit no dominant percept.
+The same low-level features therefore explain a substantial share of
+the FD effect on the <em>amount</em> of pareidolia reported in Fig. 1
+and identify a specific image profile — smooth,
+low-frequency-dominated, and symmetric — that maximally engages the
+constructive side of vision.</p>
+
+{fig("fig2_image_features.png",
+     "Fig. 2. Image-statistics features predicting per-image pareidolia.",
+     "Pearson correlation between each of 24 spectral, spatial, and "
+     "symmetry features (rows) and four image-level pareidolia metrics "
+     "(columns: pareidolia rate, mean words per trial, agreement on "
+     "the modal word, and per-image word diversity), across the 300 "
+     "stimuli. Cells are annotated with the signed <em>r</em> plus a "
+     "significance marker "
+     "(<sup>*</sup><em>P</em> &lt; 0.05, "
+     "<sup>**</sup><em>P</em> &lt; 0.01, "
+     "<sup>***</sup><em>P</em> &lt; 0.001). Rows sorted by their "
+     "correlation with pareidolia rate.",
+     "fig2")}
+
 <h3>Image complexity reshapes the content of pareidolia.</h3>
 <p>The drop in amount was accompanied by a striking shift in semantic
 content. We assigned every unique percept word to one of fifteen
@@ -235,7 +295,7 @@ space (Materials and Methods), with a hard-reject list preventing
 high-frequency objects (e.g., <em>hat, cross, hammer, gun</em>) and
 actions (e.g., <em>kiss, dancing</em>) from leaking into the human or
 animal categories. Three highly significant within-subject FD effects
-emerged on what participants named (Fig. 2). The proportion of
+emerged on what participants named (Fig. 3). The proportion of
 percepts falling in human-related categories (face, body-part, person)
 dropped monotonically from 33% at FD12 to 25% at FD16
 (χ² = 73.3, <em>P</em> = 1.3 × 10<sup>-15</sup>); the animal share
@@ -249,7 +309,7 @@ FD16 (+0.09; <em>P</em> = 6.8 × 10<sup>-13</sup>).</p>
 gradient produced a parallel rise in inter-observer disagreement. The
 Shannon entropy of the percept-word distribution per stimulus rose
 from a median of 5.90 bits at FD12 to 6.05 bits at FD16
-(Kruskal-Wallis <em>P</em> = 0.014; Fig. 2, rightmost panel),
+(Kruskal-Wallis <em>P</em> = 0.014; Fig. 3, rightmost panel),
 indicating that high-complexity images do not converge on a canonical
 answer the way low-complexity images do. The lexical shift is visible
 in the most distinctive words per FD: FD12 percepts are dominated by
@@ -260,12 +320,12 @@ rooster</em>); FD16 by texture and atmosphere descriptors
 (<em>canopy, stars, fuzzy, marble, rain, scatter, noise, swamp</em>).
 The progression from figural to animal to textural is also visible
 spatially in a t-SNE projection of every unique percept word coloured
-by majority FD level (Fig. 3b): FD12 words concentrate in face and
+by majority FD level (Fig. 4b): FD12 words concentrate in face and
 person regions, FD14 in the central animal cloud, and FD16 spreads
 into the abstract and textural periphery.</p>
 
-{fig("fig2_fd_perception.png",
-     "Fig. 2. Image complexity reshapes the content of pareidolia.",
+{fig("fig3_fd_perception.png",
+     "Fig. 3. Image complexity reshapes the content of pareidolia.",
      "Within-subject mean ± 95% CI per FD of the human share, animal "
      "share, and animal-minus-human bias index (panels 1 to 3, bars), "
      "together with the per-image vocabulary entropy of percept "
@@ -274,15 +334,66 @@ into the abstract and textural periphery.</p>
      "(Wilcoxon for the participant-level metrics, Mann-Whitney U for "
      "the image-level panel).",
      "fig2")}
-{fig("fig3_semantic_territory.png",
-     "Fig. 3. Semantic territory of collective pareidolia.",
+{fig("fig4_semantic_territory.png",
+     "Fig. 4. Semantic territory of collective pareidolia.",
      "Shared t-SNE projection (cosine, perplexity = 30) of every "
      "unique percept word (n = 4,361); dot size scales with corpus "
      "frequency; KDE contours per group. (a) coloured by majority "
      "creativity tertile (sequential warm palette, amber = low, dark "
      "red = high DAT). (b) coloured by majority FD level at which the "
      "word was produced. Both panels share the same projection.",
-     "fig3")}
+     "fig4")}
+
+<h3>Observers match fractal dimension to a percept family's spatial scale.</h3>
+<p>To complement the fifteen-bucket taxonomy of Fig. 3 with a finer
+view oriented around the spatial scale of the meanings extracted, we
+hand-curated eight hierarchically organised percept families spanning
+the most frequent vocabulary in the corpus: face / body part,
+person / people, animal, mythical creature, plant, place / landscape,
+object / symbol, and abstract / texture (Materials and Methods).
+Coverage on the corpus of valid percept tokens was 59% (the residual
+is largely geography terms, foods, and rare creatures unique to a
+single observer); per-FD report rates within the covered fraction
+were z-scored across the three FD conditions to expose the shape of
+each family's tuning.</p>
+
+<p>Two converging patterns emerge (Fig. 5). First, families differ
+sharply in <em>where</em> on the FD axis they peak. Faces, body
+parts, persons, places, and discrete objects are all over-reported
+on the smoothest stimuli (FD ≈ 1.3; <em>z</em> = +0.7 to +1.4) and
+under-reported on the busiest ones (FD ≈ 1.7;
+<em>z</em> = −0.9 to −1.4). Animals peak at the middle complexity
+level (FD ≈ 1.5; <em>z</em> = +0.8), as do mythical creatures
+(<em>z</em> = +0.4 at FD 1.5 and <em>z</em> = +0.9 at FD 1.7).
+Plants and abstract or texture descriptors peak strongly on the
+busiest stimuli (FD ≈ 1.7; <em>z</em> = +1.4 in both cases). Second,
+computing each family's rate-weighted <em>preferred FD</em> (a
+continuous summary of its tuning) orders the families on a
+smooth-to-rough axis from approximately 1.45 (persons, places,
+faces, objects) through 1.49 (animals) to 1.54 (mythical creatures,
+abstract textures, plants), recovering the expected progression from
+global, coherent forms at low complexity to fine, repeated structure
+at high complexity. The same gradient is visible at the percept
+level (Fig. 5b): the 99 individual words reported on at least 30
+trials span a preferred-FD range of roughly 1.31 to 1.62, with the
+family means falling along the heatmap-derived ordering. The result
+formalises the qualitative content shift documented in Fig. 3 as a
+continuous mapping between stimulus complexity and the spatial scale
+of the meanings observers extract.</p>
+
+{fig("fig5_fd_family.png",
+     "Fig. 5. Observers match fractal dimension to a percept family's "
+     "spatial scale.",
+     "(a) For each of eight hand-curated percept families (rows) and "
+     "each FD level (columns), the relative report rate z-scored "
+     "across FD within family; red = the family peaks at this FD. "
+     "Rows ordered by each family's rate-weighted preferred FD, "
+     "smooth (top) to rough (bottom). (b) Preferred FD per individual "
+     "percept word with at least 30 reports (dots; mean FD of images "
+     "where the word was reported), grouped by family with the family "
+     "mean shown as a horizontal bar. Family coverage is 59% of all "
+     "valid percept tokens.",
+     "fig5")}
 
 <h3>Observers largely disagree on what they see, but agreement decreases
 with complexity.</h3>
@@ -299,7 +410,7 @@ same word yields 1.0; close synonyms yield ~0.6 to 0.8; unrelated
 words yield ~0.1). Both metrics agree that consensus is low in
 absolute terms: on average the single most common word accounts for
 only 7% of all percepts (best image: 27%; worst image: 4%), and the
-mean cross-observer cosine similarity sits around 0.29 (Fig. 4).
+mean cross-observer cosine similarity sits around 0.29 (Fig. 6).
 Pareidolia, at this resolution, is mostly an idiosyncratic act. The
 small but reliable consensus core that does exist is modulated by
 image complexity: low-FD images elicit higher agreement than high-FD
@@ -313,8 +424,8 @@ vocabulary entropy), indicating that the ambiguity of an image is a
 property of the image itself rather than of the creativity profile of
 its observers.</p>
 
-{fig("fig4_image_consensus.png",
-     "Fig. 4. Inter-observer agreement decreases with image complexity.",
+{fig("fig6_image_consensus.png",
+     "Fig. 6. Inter-observer agreement decreases with image complexity.",
      "Per-image inter-observer agreement summarised across 300 stimuli "
      "(100 per FD level). (a) Mean cross-observer cosine similarity "
      "between two randomly sampled percept embeddings from different "
@@ -327,7 +438,7 @@ its observers.</p>
 
 <h3>Test-retest reliability of DAT is preserved across the task.</h3>
 <p>Among the <em>n</em> = 507 participants who completed both DAT
-timepoints (Fig. 5), pre- and post-task scores were positively but
+timepoints (Fig. 7), pre- and post-task scores were positively but
 moderately correlated (Pearson <em>r</em> = 0.19,
 <em>P</em> = 1.2 × 10<sup>-5</sup>), with no detectable group-level
 shift (Wilcoxon signed-rank <em>W</em> = 6.1 × 10<sup>4</sup>,
@@ -338,8 +449,8 @@ substituted in, consistent with this link capturing a stable
 trait-level property of the observer rather than a transient state
 shift induced by the pareidolia task.</p>
 
-{fig("fig5a_dat_pre_post.png",
-     "Fig. 5. Pre vs post DAT scores.",
+{fig("fig7_dat_pre_post.png",
+     "Fig. 7. Pre vs post DAT scores.",
      "Left: GloVe-scored DAT post vs DAT pre, n = 507. Right: "
      "distribution of the participant-level delta (post minus pre).",
      "fig5a", css_class="narrow")}
@@ -353,12 +464,12 @@ corpus rarity of a participant's words), only one survived bivariate
 opposite direction to a "more is more" account: high-creativity
 participants completed slightly <em>fewer</em> trials than
 low-creativity participants (<em>r</em> = −0.10, <em>P</em> = 0.03;
-Fig. 6). Words per trial and reaction time were both null.
+Fig. 8). Words per trial and reaction time were both null.
 Creativity, in this dataset, therefore does not manifest as producing
 more or faster pareidolia.</p>
 
-{fig("fig5b_dat_behaviour.png",
-     "Fig. 6. Creativity is not associated with more or faster "
+{fig("fig8_dat_behaviour.png",
+     "Fig. 8. Creativity is not associated with more or faster "
      "pareidolia.",
      "DAT vs mean words per trial (left) and DAT vs mean reaction "
      "time (right). The number of percepts extracted per trial and "
@@ -371,18 +482,18 @@ intermediate complexity.</h3>
 participant's percept embeddings, a participant-level measure of how
 semantically scattered the percepts are, was positively correlated
 with DAT (<em>r</em> = +0.14, <em>P</em> = 0.001; <em>n</em> = 500;
-Fig. 7, left), reproducing a previously reported relationship between
+Fig. 9, left), reproducing a previously reported relationship between
 divergent thinking and lexical diversity in a perceptual task.
 Splitting the analysis by FD revealed that the effect concentrates at
-the middle complexity level (Fig. 7, right): <em>r</em> = +0.17
+the middle complexity level (Fig. 9, right): <em>r</em> = +0.17
 (<em>P</em> = 2.7 × 10<sup>-4</sup>) at FD14, <em>r</em> = +0.09
 (<em>P</em> = 0.04) at FD12, and essentially null at FD16
 (<em>r</em> ≈ 0, <em>P</em> = 0.93). Intermediate complexity therefore
 appears to be the regime in which divergent-thinking ability has the
 greatest expressive room.</p>
 
-{fig("fig5cd_diversity.png",
-     "Fig. 7. Creativity predicts perceptual diversity, especially at "
+{fig("fig9_diversity.png",
+     "Fig. 9. Creativity predicts perceptual diversity, especially at "
      "intermediate complexity.",
      "(left) pooled across all FD levels (one point per participant). "
      "(right) the same analysis split by FD: the relationship "
@@ -396,7 +507,7 @@ falling in human categories (face + body-part + person) was negatively
 associated with DAT (<em>r</em> = −0.14, <em>P</em> = 0.003), while
 the animal share was numerically higher in high-creativity
 participants but did not reach significance on its own
-(<em>r</em> = +0.08, <em>P</em> = 0.10; Fig. 8). Combining the two
+(<em>r</em> = +0.08, <em>P</em> = 0.10; Fig. 10). Combining the two
 into an animal-minus-human bias index produced the cleanest
 creativity effect we observed (<em>r</em> = +0.12, <em>P</em> = 0.006;
 Spearman ρ = +0.14, <em>P</em> = 0.001). High-creativity participants
@@ -404,8 +515,8 @@ therefore do not extract <em>more</em> pareidolic percepts overall.
 Rather, they shift the <em>kind</em> of percept they extract, away
 from canonical human and face responses and toward animal ones.</p>
 
-{fig("fig5f_dat_human_animal_bias.png",
-     "Fig. 8. Creativity tilts the percept distribution away from "
+{fig("fig10_human_animal_bias.png",
+     "Fig. 10. Creativity tilts the percept distribution away from "
      "humans and toward animals.", "", "fig5f")}
 
 <h3>Unsupervised clusters separate low- and high-creativity profiles.</h3>
@@ -417,7 +528,7 @@ that occurred at least three times in the corpus (Materials and
 Methods). HDBSCAN yielded 32 interpretable clusters plus a small
 noise group (22% of words); about a third of clusters had a 95%
 bootstrap CI on the log-odds (high vs low tertile) preference that
-excluded zero (Fig. 9b).</p>
+excluded zero (Fig. 11b).</p>
 
 <p>High-creativity participants were over-represented in clusters of
 <em>specific, embodied, or unusual</em> percepts:
@@ -436,7 +547,7 @@ percepts: <em>plus / separation / two / open</em>;
 <em>land / mountain / cliff</em>;
 <em>fire / explosion / death</em>;
 <em>hammer / hole / splatter / dots</em>. The semantic-map view
-(Fig. 9a) makes the structure of the contrast explicit: the two
+(Fig. 11a) makes the structure of the contrast explicit: the two
 preference profiles occupy non-overlapping regions of BERT space,
 with the creature, viscera, and specific-object region on the upper
 side and the landscape, texture, and abstract region on the lower
@@ -444,8 +555,8 @@ side. Together with the bias-index result above, this argues that
 the creativity effect on pareidolia is best characterised not as
 seeing <em>more</em> but as seeing <em>different</em> things.</p>
 
-{fig("fig6_preferred_categories.png",
-     "Fig. 9. Percept clusters preferred by low vs high creativity.",
+{fig("fig11_preferred_categories.png",
+     "Fig. 11. Percept clusters preferred by low vs high creativity.",
      "(a) 2D UMAP projection of every percept word with at least 3 "
      "corpus occurrences, coloured by the log-odds preference of its "
      "HDBSCAN cluster (red = preferred by high-creativity "
@@ -459,7 +570,7 @@ seeing <em>more</em> but as seeing <em>different</em> things.</p>
 <h3>The same pipeline reveals a complementary FD preference axis.</h3>
 <p>Repurposing the clustering with stimulus FD level as the contrast
 variable (FD16 vs FD12 instead of high vs low DAT) shows partly
-overlapping but distinct preference geometries (Fig. 10). High-FD
+overlapping but distinct preference geometries (Fig. 12). High-FD
 images are over-represented in clusters of <em>tree / forest</em>,
 <em>butterfly / caterpillar / worm</em>, <em>alien / sky / space</em>,
 <em>fish / seahorse / crab</em>, <em>witch / demon / angel</em>, and
@@ -472,9 +583,9 @@ space; image complexity drives a body-parts-to-atmospheric-creatures
 shift along another. The two manipulations therefore probe partly
 independent dimensions of the same percept landscape.</p>
 
-{fig("fig7_preferred_categories_fd.png",
-     "Fig. 10. Percept clusters preferred by low vs high stimulus FD.",
-     "Same clustering pipeline as Fig. 9; the contrast variable is "
+{fig("fig12_preferred_categories_fd.png",
+     "Fig. 12. Percept clusters preferred by low vs high stimulus FD.",
+     "Same clustering pipeline as Fig. 11; the contrast variable is "
      "FD16 versus FD12. (a) Semantic map coloured by log-odds "
      "preference (blue = FD12, red = FD16). (b) Forest plot of "
      "clusters, log-odds (FD16/FD12) with bootstrap 95% CI; stars "
@@ -491,7 +602,7 @@ entropy in bits, Gini coefficient of the 2D gaze histogram, and
 recurrence rate of nearby fixations). We contrasted these metrics
 along three independent axes: trials on which the participant did vs
 did not report a pareidolic percept, stimulus FD level, and continuous
-DAT score (Fig. 11).</p>
+DAT score (Fig. 13).</p>
 
 <p>Within the 105 participants who had at least two trials of each
 kind, trials in which the participant submitted at least one word
@@ -520,8 +631,8 @@ behavioural-engagement null reported above, this argues that
 creativity does not change <em>how</em> people look at the stimulus,
 only <em>what</em> they extract from it.</p>
 
-{fig("fig4_eye_tracking.png",
-     "Fig. 11. Eye-tracking metrics across three contrasts.",
+{fig("fig13_eye_tracking.png",
+     "Fig. 13. Eye-tracking metrics across three contrasts.",
      "Rows: (A) pareidolia vs no-pareidolia trials (within-subject "
      "Wilcoxon, n = 105 participants with at least 2 trials of each "
      "kind); (B) stimulus FD level (within-subject Friedman plus "

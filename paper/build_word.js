@@ -365,6 +365,87 @@ children.push(...fig(
   "Wilcoxon signed-rank contrasts."
 ));
 
+children.push(H3("Image-statistics features predict per-image pareidolia rate."));
+children.push(P(
+  "Beyond the discrete FD12/FD14/FD16 contrast, individual stimuli " +
+  "within the same FD level varied widely in how often participants " +
+  "reported a pareidolic percept (per-image rate range 0.50 to 0.95, " +
+  "median 0.76). To ask which low-level image statistics drive this " +
+  "variability, we extracted 24 features from each of the 300 stimuli, " +
+  "spanning intensity statistics (mean, SD, skewness, kurtosis, pixel " +
+  "entropy), the radially averaged power-spectrum slope and low / mid / " +
+  "high frequency band shares, spatial structure (Sobel edge magnitude, " +
+  "local-contrast mean and SD, count and size statistics of connected " +
+  "components binarised at mean intensity), and five symmetry measures " +
+  "(left-right and top-bottom pixel symmetry, gradient-orientation " +
+  "symmetry, coarse-downsampled symmetry, and Fourier-magnitude " +
+  "symmetry; Materials and Methods)."
+));
+children.push(R([
+  { t: "Two image properties stood out as positive correlates of " +
+        "pareidolia rate (Fig. 2). The power-spectrum slope (steeper " +
+        "slope = stronger low-frequency dominance) was the single " +
+        "strongest positive predictor (" },
+  { t: "r", italic: true },
+  { t: " = +0.37, " },
+  { t: "P", italic: true },
+  { t: " = 2.5 × 10" },
+  { t: "−11", sup: true },
+  { t: "), and the low-frequency band share showed the same effect (" },
+  { t: "r", italic: true },
+  { t: " = +0.34, " },
+  { t: "P", italic: true },
+  { t: " = 2.1 × 10" },
+  { t: "−9", sup: true },
+  { t: "). Symmetry contributed in the same direction: top-bottom pixel " +
+        "symmetry, left-right pixel symmetry, Fourier-magnitude " +
+        "symmetry, and gradient-orientation symmetry all correlated " +
+        "positively with pareidolia rate (" },
+  { t: "r", italic: true },
+  { t: " = +0.17 to +0.24, all " },
+  { t: "P", italic: true },
+  { t: " < 0.005). On the other side, fragmented and high-contrast " +
+        "images suppressed pareidolia: Sobel edge SD, local-contrast " +
+        "SD, local-contrast mean, edge mean, and the count of connected " +
+        "components were the most negative predictors (" },
+  { t: "r", italic: true },
+  { t: " = −0.35 to −0.38, all " },
+  { t: "P", italic: true },
+  { t: " < 10" },
+  { t: "−9", sup: true },
+  { t: "). A random-forest regression on the full feature set (5-fold " +
+        "CV) captured a small but reliable amount of the per-image " +
+        "variance in pareidolia rate (" },
+  { t: "R", italic: true },
+  { t: "2", sup: true },
+  { t: " = 0.08 ± 0.07), with permutation feature importance again " +
+        "putting symmetry (top-bottom and gradient L-R) and the " +
+        "spectral slope at the top. Qualitatively, the highest-" +
+        "pareidolia images are smooth, low-frequency FD12 silhouettes " +
+        "that elicit canonical percepts (" },
+  { t: "bear, dog, face, rabbit, fish", italic: true },
+  { t: "), whereas the lowest-pareidolia images are dense, high-" +
+        "frequency FD16 textures that fragment into many small " +
+        "components and elicit no dominant percept. The same low-level " +
+        "features therefore explain a substantial share of the FD " +
+        "effect on the " },
+  { t: "amount", italic: true },
+  { t: " of pareidolia reported in Fig. 1, and identify a specific " +
+        "image profile (smooth, low-frequency-dominated, symmetric) " +
+        "that maximally engages the constructive side of vision." },
+]));
+children.push(...fig(
+  "fig2_image_features.png",
+  "Fig. 2. Image-statistics features predicting per-image pareidolia.",
+  "Pearson correlation between each of 24 spectral, spatial, and " +
+  "symmetry features (rows) and four image-level pareidolia metrics " +
+  "(columns: pareidolia rate, mean words per trial, agreement on the " +
+  "modal word, and per-image word diversity), across the 300 stimuli. " +
+  "Cells are annotated with the signed r plus a significance marker " +
+  "(* P < 0.05, ** P < 0.01, *** P < 0.001). Rows sorted by their " +
+  "correlation with pareidolia rate."
+));
+
 children.push(H3("Image complexity reshapes the content of pareidolia."));
 children.push(R([
   { t: "The drop in amount was accompanied by a striking shift in semantic " +
@@ -379,7 +460,7 @@ children.push(R([
   { t: "kiss, dancing", italic: true },
   { t: ") from leaking into the human or animal categories. Three highly " +
         "significant within-subject FD effects emerged on what " +
-        "participants named (Fig. 2). The proportion of percepts falling " +
+        "participants named (Fig. 3). The proportion of percepts falling " +
         "in human-related categories (face, body-part, person) dropped " +
         "monotonically from 33% at FD12 to 25% at FD16 " +
         "(χ² = 73.3, " },
@@ -407,7 +488,7 @@ children.push(R([
         "distribution per stimulus rose from a median of 5.90 bits at " +
         "FD12 to 6.05 bits at FD16 (Kruskal-Wallis " },
   { t: "P", italic: true },
-  { t: " = 0.014; Fig. 2, rightmost panel), indicating that high-" +
+  { t: " = 0.014; Fig. 3, rightmost panel), indicating that high-" +
         "complexity images do not converge on a canonical answer the way " +
         "low-complexity images do. The lexical shift is visible in the " +
         "most distinctive words per FD: FD12 percepts are dominated by " +
@@ -421,14 +502,14 @@ children.push(R([
     italic: true },
   { t: "). The progression from figural to animal to textural is also " +
         "visible spatially in a t-SNE projection of every unique percept " +
-        "word coloured by majority FD level (Fig. 3b): FD12 words " +
+        "word coloured by majority FD level (Fig. 4b): FD12 words " +
         "concentrate in face and person regions, FD14 in the central " +
         "animal cloud, and FD16 spreads into the abstract and textural " +
         "periphery." },
 ]));
 children.push(...fig(
-  "fig2_fd_perception.png",
-  "Fig. 2. Image complexity reshapes the content of pareidolia.",
+  "fig3_fd_perception.png",
+  "Fig. 3. Image complexity reshapes the content of pareidolia.",
   "Within-subject mean ± 95% CI per FD of the human share, animal " +
   "share, and animal-minus-human bias index (panels 1 to 3, bars), together " +
   "with the per-image vocabulary entropy of percept distributions " +
@@ -437,8 +518,8 @@ children.push(...fig(
   "level metrics, Mann-Whitney U for the image-level panel)."
 ));
 children.push(...fig(
-  "fig3_semantic_territory.png",
-  "Fig. 3. Semantic territory of collective pareidolia.",
+  "fig4_semantic_territory.png",
+  "Fig. 4. Semantic territory of collective pareidolia.",
   "Shared t-SNE projection (cosine, perplexity = 30) of every unique " +
   "percept word (n = 4,361); dot size scales with corpus frequency; KDE " +
   "contours per group. (a) coloured by majority creativity tertile " +
@@ -446,6 +527,73 @@ children.push(...fig(
   "coloured by majority FD level at which the word was produced. Both " +
   "panels share the same projection.",
   430
+));
+
+children.push(H3("Observers match fractal dimension to a percept " +
+  "family's spatial scale."));
+children.push(P(
+  "To complement the fifteen-bucket taxonomy of Fig. 3 with a finer " +
+  "view oriented around the spatial scale of the meanings extracted, " +
+  "we hand-curated eight hierarchically organised percept families " +
+  "spanning the most frequent vocabulary in the corpus: face / body " +
+  "part, person / people, animal, mythical creature, plant, " +
+  "place / landscape, object / symbol, and abstract / texture " +
+  "(Materials and Methods). Coverage on the corpus of valid percept " +
+  "tokens was 59% (the residual is largely geography terms, foods, and " +
+  "rare creatures unique to a single observer); per-FD report rates " +
+  "within the covered fraction were z-scored across the three FD " +
+  "conditions to expose the shape of each family's tuning."
+));
+children.push(R([
+  { t: "Two converging patterns emerge (Fig. 5). First, families " +
+        "differ sharply in " },
+  { t: "where", italic: true },
+  { t: " on the FD axis they peak. Faces, body parts, persons, places, " +
+        "and discrete objects are all over-reported on the smoothest " +
+        "stimuli (FD ≈ 1.3; " },
+  { t: "z", italic: true },
+  { t: " = +0.7 to +1.4) and under-reported on the busiest ones " +
+        "(FD ≈ 1.7; " },
+  { t: "z", italic: true },
+  { t: " = −0.9 to −1.4). Animals peak at the middle complexity level " +
+        "(FD ≈ 1.5; " },
+  { t: "z", italic: true },
+  { t: " = +0.8), as do mythical creatures (" },
+  { t: "z", italic: true },
+  { t: " = +0.4 at FD 1.5 and " },
+  { t: "z", italic: true },
+  { t: " = +0.9 at FD 1.7). Plants and abstract or texture descriptors " +
+        "peak strongly on the busiest stimuli (FD ≈ 1.7; " },
+  { t: "z", italic: true },
+  { t: " = +1.4 in both cases). Second, computing each family's rate-" +
+        "weighted preferred FD (a continuous summary of its tuning) " +
+        "orders the families on a smooth-to-rough axis from " +
+        "approximately 1.45 (persons, places, faces, objects) through " +
+        "1.49 (animals) to 1.54 (mythical creatures, abstract textures, " +
+        "plants), recovering the expected progression from global, " +
+        "coherent forms at low complexity to fine, repeated structure " +
+        "at high complexity. The same gradient is visible at the " +
+        "percept level (Fig. 5b): the 99 individual words reported on " +
+        "at least 30 trials span a preferred-FD range of roughly 1.31 " +
+        "to 1.62, with the family means falling along the heatmap-" +
+        "derived ordering. The result formalises the qualitative " +
+        "content shift documented in Fig. 3 as a continuous mapping " +
+        "between stimulus complexity and the spatial scale of the " +
+        "meanings observers extract." },
+]));
+children.push(...fig(
+  "fig5_fd_family.png",
+  "Fig. 5. Observers match fractal dimension to a percept family's " +
+  "spatial scale.",
+  "(a) For each of eight hand-curated percept families (rows) and each " +
+  "FD level (columns), the relative report rate z-scored across FD " +
+  "within family; red = the family peaks at this FD. Rows ordered by " +
+  "each family's rate-weighted preferred FD, smooth (top) to rough " +
+  "(bottom). (b) Preferred FD per individual percept word with at " +
+  "least 30 reports (dots; mean FD of images where the word was " +
+  "reported), grouped by family with the family mean shown as a " +
+  "horizontal bar. Family coverage is 59% of all valid percept tokens.",
+  500
 ));
 
 children.push(H3("Observers largely disagree on what they see, but " +
@@ -469,7 +617,7 @@ children.push(R([
         "terms: on average the single most common word accounts for " +
         "only 7% of all percepts (best image: 27%; worst image: 4%), " +
         "and the mean cross-observer cosine similarity sits around " +
-        "0.29 (Fig. 4). Pareidolia, at this resolution, is mostly an " +
+        "0.29 (Fig. 6). Pareidolia, at this resolution, is mostly an " +
         "idiosyncratic act. The small but reliable consensus core that " +
         "does exist is modulated by image complexity: low-FD images " +
         "elicit higher agreement than high-FD images on both metrics " +
@@ -491,8 +639,8 @@ children.push(R([
         "the creativity profile of its observers." },
 ]));
 children.push(...fig(
-  "fig4_image_consensus.png",
-  "Fig. 4. Inter-observer agreement decreases with image complexity.",
+  "fig6_image_consensus.png",
+  "Fig. 6. Inter-observer agreement decreases with image complexity.",
   "Per-image inter-observer agreement summarised across 300 stimuli " +
   "(100 per FD level). (a) Mean cross-observer cosine similarity " +
   "between two randomly sampled percept embeddings from different " +
@@ -508,7 +656,7 @@ children.push(H3("Test-retest reliability of DAT is preserved across the task.")
 children.push(R([
   { t: "Among the " },
   { t: "n", italic: true },
-  { t: " = 507 participants who completed both DAT timepoints (Fig. 5), " +
+  { t: " = 507 participants who completed both DAT timepoints (Fig. 7), " +
         "pre- and post-task scores were positively but moderately " +
         "correlated (Pearson " },
   { t: "r", italic: true },
@@ -530,8 +678,8 @@ children.push(R([
         "transient state shift induced by the pareidolia task." },
 ]));
 children.push(...fig(
-  "fig5a_dat_pre_post.png",
-  "Fig. 5. Pre vs post DAT scores.",
+  "fig7_dat_pre_post.png",
+  "Fig. 7. Pre vs post DAT scores.",
   "Left: GloVe-scored DAT post vs DAT pre, n = 507. Right: distribution " +
   "of the participant-level delta (post minus pre).",
   360
@@ -552,13 +700,13 @@ children.push(R([
   { t: "r", italic: true },
   { t: " = −0.10, " },
   { t: "P", italic: true },
-  { t: " = 0.03; Fig. 6). Words per trial and reaction time were both " +
+  { t: " = 0.03; Fig. 8). Words per trial and reaction time were both " +
         "null. Creativity, in this dataset, therefore does not manifest " +
         "as producing more or faster pareidolia." },
 ]));
 children.push(...fig(
-  "fig5b_dat_behaviour.png",
-  "Fig. 6. Creativity is not associated with more or faster pareidolia.",
+  "fig8_dat_behaviour.png",
+  "Fig. 8. Creativity is not associated with more or faster pareidolia.",
   "DAT vs mean words per trial (left) and DAT vs mean reaction time " +
   "(right). The number of percepts extracted per trial and the time " +
   "taken to extract them do not covary with creativity.",
@@ -577,11 +725,11 @@ children.push(R([
   { t: "P", italic: true },
   { t: " = 0.001; " },
   { t: "n", italic: true },
-  { t: " = 500; Fig. 7, left), reproducing a previously reported " +
+  { t: " = 500; Fig. 9, left), reproducing a previously reported " +
         "relationship between divergent thinking and lexical diversity in " +
         "a perceptual task. Splitting the analysis by FD revealed that " +
         "the effect concentrates at the middle complexity level " +
-        "(Fig. 7, right): " },
+        "(Fig. 9, right): " },
   { t: "r", italic: true },
   { t: " = +0.17 (" },
   { t: "P", italic: true },
@@ -600,8 +748,8 @@ children.push(R([
         "expressive room." },
 ]));
 children.push(...fig(
-  "fig5cd_diversity.png",
-  "Fig. 7. Creativity predicts perceptual diversity, especially at " +
+  "fig9_diversity.png",
+  "Fig. 9. Creativity predicts perceptual diversity, especially at " +
   "intermediate complexity.",
   "(left) pooled across all FD levels (one point per participant). " +
   "(right) the same analysis split by FD: the relationship concentrates " +
@@ -623,7 +771,7 @@ children.push(R([
   { t: "r", italic: true },
   { t: " = +0.08, " },
   { t: "P", italic: true },
-  { t: " = 0.10; Fig. 8). Combining the two into an animal-minus-human " +
+  { t: " = 0.10; Fig. 10). Combining the two into an animal-minus-human " +
         "bias index produced the cleanest creativity effect we observed (" },
   { t: "r", italic: true },
   { t: " = +0.12, " },
@@ -638,8 +786,8 @@ children.push(R([
         "responses and toward animal ones." },
 ]));
 children.push(...fig(
-  "fig5f_dat_human_animal_bias.png",
-  "Fig. 8. Creativity tilts the percept distribution away from humans " +
+  "fig10_human_animal_bias.png",
+  "Fig. 10. Creativity tilts the percept distribution away from humans " +
   "and toward animals.",
   ""
 ));
@@ -657,7 +805,7 @@ children.push(R([
         "32 interpretable clusters plus a small noise group (22% of " +
         "words); about a third of clusters had a 95% bootstrap CI on " +
         "the log-odds (high vs low tertile) preference that excluded " +
-        "zero (Fig. 9b)." },
+        "zero (Fig. 11b)." },
 ]));
 children.push(R([
   { t: "High-creativity participants were over-represented in clusters of " },
@@ -692,7 +840,7 @@ children.push(R([
   { t: "fire / explosion / death", italic: true },
   { t: "; " },
   { t: "hammer / hole / splatter / dots", italic: true },
-  { t: ". The semantic-map view (Fig. 9a) makes the structure of the " +
+  { t: ". The semantic-map view (Fig. 11a) makes the structure of the " +
         "contrast explicit: the two preference profiles occupy " +
         "non-overlapping regions of BERT space, with the creature, " +
         "viscera, and specific-object region on the upper side and the " +
@@ -706,8 +854,8 @@ children.push(R([
   { t: " things." },
 ]));
 children.push(...fig(
-  "fig6_preferred_categories.png",
-  "Fig. 9. Percept clusters preferred by low vs high creativity.",
+  "fig11_preferred_categories.png",
+  "Fig. 11. Percept clusters preferred by low vs high creativity.",
   "(a) 2D UMAP projection of every percept word with at least 3 corpus " +
   "occurrences, coloured by the log-odds preference of its HDBSCAN " +
   "cluster (red = preferred by high-creativity participants, amber = " +
@@ -723,7 +871,7 @@ children.push(R([
   { t: "Repurposing the clustering with stimulus FD level as the " +
         "contrast variable (FD16 vs FD12 instead of high vs low DAT) " +
         "shows partly overlapping but distinct preference geometries " +
-        "(Fig. 10). High-FD images are over-represented in clusters of " },
+        "(Fig. 12). High-FD images are over-represented in clusters of " },
   { t: "tree / forest", italic: true },
   { t: ", " },
   { t: "butterfly / caterpillar / worm", italic: true },
@@ -752,9 +900,9 @@ children.push(R([
         "percept landscape." },
 ]));
 children.push(...fig(
-  "fig7_preferred_categories_fd.png",
-  "Fig. 10. Percept clusters preferred by low vs high stimulus FD.",
-  "Same clustering pipeline as Fig. 9; the contrast variable is FD16 " +
+  "fig12_preferred_categories_fd.png",
+  "Fig. 12. Percept clusters preferred by low vs high stimulus FD.",
+  "Same clustering pipeline as Fig. 11; the contrast variable is FD16 " +
   "versus FD12. (a) Semantic map coloured by log-odds preference " +
   "(blue = FD12, red = FD16). (b) Forest plot of clusters, log-odds " +
   "(FD16/FD12) with bootstrap 95% CI; stars mark clusters whose CI " +
@@ -771,7 +919,7 @@ children.push(P(
   "coefficient of the 2D gaze histogram, and recurrence rate of nearby " +
   "fixations). We contrasted these metrics along three independent axes: " +
   "trials on which the participant did vs did not report a pareidolic " +
-  "percept, stimulus FD level, and continuous DAT score (Fig. 11)."
+  "percept, stimulus FD level, and continuous DAT score (Fig. 13)."
 ));
 children.push(R([
   { t: "Within the 105 participants who had at least two trials of each " +
@@ -817,8 +965,8 @@ children.push(R([
   { t: " they extract from it." },
 ]));
 children.push(...fig(
-  "fig8_eye_tracking.png",
-  "Fig. 11. Eye-tracking metrics across three contrasts.",
+  "fig13_eye_tracking.png",
+  "Fig. 13. Eye-tracking metrics across three contrasts.",
   "Rows: (A) pareidolia vs no-pareidolia trials (within-subject Wilcoxon, " +
   "n = 105 participants with at least 2 trials of each kind); (B) " +
   "stimulus FD level (within-subject Friedman plus pair-wise Wilcoxon, " +

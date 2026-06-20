@@ -43,38 +43,45 @@ def _parse_ref_dat_words(s) -> list[str]:
 
 
 def main(rescore_before: bool = True, show: bool = True):
-    participants = parse_events.main_cohort().copy()
-    model = dat.load_model()
-    print(f"DAT model: {model.source}  ({len(model.vectors):,} words)")
-
-    # DAT-after — score from the 10 Q-responses captured AFTER the task.
-    after_scores = []
-    after_used_n = []
-    for words in participants["dat_after_words"]:
-        words = list(words) if words is not None else []
-        s, used = dat.score(words, model=model, return_words=True)
-        after_scores.append(s)
-        after_used_n.append(len(used))
-    participants["dat_after_score"] = after_scores
-    participants["dat_after_n_used"] = after_used_n
-
-    # DAT-before — optionally re-score for consistency.
-    if rescore_before:
-        sessions = loader.load_sessions()
-        ref_map = dict(zip(sessions["user_id"], sessions["ref_dat_words"]))
-        before_scores = []
-        for uid in participants["user_id"]:
-            words = _parse_ref_dat_words(ref_map.get(uid))
-            s = dat.score(words, model=model)
-            before_scores.append(s)
-        participants["dat_before_glove"] = before_scores
+    # Prefer the shipped enriched parquet (has dat_before_glove + dat_after_score
+    # already computed) so the figure rebuilds without the SQLite or GloVe.
+    shipped = config.cached_parquet("participants_with_dat_after.parquet")
+    if shipped.exists():
+        participants = pd.read_parquet(shipped)
+        print(f"Loaded enriched DAT cache: {shipped} ({len(participants):,} rows)")
     else:
-        participants["dat_before_glove"] = participants["ref_dat_score"]
+        participants = parse_events.main_cohort().copy()
+        model = dat.load_model()
+        print(f"DAT model: {model.source}  ({len(model.vectors):,} words)")
 
-    # Cache the enriched participants table for downstream scripts.
-    enriched = config.CACHE_DIR / "participants_with_dat_after.parquet"
-    participants.to_parquet(enriched)
-    print(f"Cached -> {enriched}")
+        # DAT-after — score from the 10 Q-responses captured AFTER the task.
+        after_scores = []
+        after_used_n = []
+        for words in participants["dat_after_words"]:
+            words = list(words) if words is not None else []
+            s, used = dat.score(words, model=model, return_words=True)
+            after_scores.append(s)
+            after_used_n.append(len(used))
+        participants["dat_after_score"] = after_scores
+        participants["dat_after_n_used"] = after_used_n
+
+        # DAT-before — optionally re-score for consistency.
+        if rescore_before:
+            sessions = loader.load_sessions()
+            ref_map = dict(zip(sessions["user_id"], sessions["ref_dat_words"]))
+            before_scores = []
+            for uid in participants["user_id"]:
+                words = _parse_ref_dat_words(ref_map.get(uid))
+                s = dat.score(words, model=model)
+                before_scores.append(s)
+            participants["dat_before_glove"] = before_scores
+        else:
+            participants["dat_before_glove"] = participants["ref_dat_score"]
+
+        # Cache the enriched participants table for downstream scripts.
+        enriched = config.CACHE_DIR / "participants_with_dat_after.parquet"
+        participants.to_parquet(enriched)
+        print(f"Cached -> {enriched}")
 
     keep = participants.dropna(subset=["dat_before_glove", "dat_after_score"]).copy()
     keep["delta"] = keep["dat_after_score"] - keep["dat_before_glove"]

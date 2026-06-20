@@ -17,26 +17,24 @@ SRC = ROOT / "analysis_outputs"
 DST = ROOT / "paper" / "figures"
 
 # manuscript-name -> source stem (without 'fig_' prefix)
+# 13-figure manuscript with image_features and fd_family integrated.
 MAP = {
-    "fig1_fd_behaviour":            "fd_effect",
-    "fig2_fd_perception":           "animal_vs_body_fd",
-    "fig3_semantic_territory":      "fig3_semantic_territory",
-    "fig4_image_consensus":         "image_consensus_fd_paper",
-    "fig5a_dat_pre_post":           "dat_before_vs_after",
-    "fig5b_dat_behaviour":          "creativity_effects_before",
-    "fig5cd_diversity":             "fig5cd_diversity",
-    "fig5f_dat_human_animal_bias":  "animal_vs_body_dat",
-    "fig6_preferred_categories":    "preferred_categories_combined",
-    "fig7_preferred_categories_fd": "preferred_categories_fd",
-    "fig8_eye_tracking":            "eyetracking_contrasts",
-    # Pending integration into the manuscript: image-features and
-    # fd-family figures are generated and shipped so the section drafts
-    # in paper/section_*.md can reference them; they will be assigned a
-    # final fig number when spliced into build_preview_pdf.py.
-    "fig_image_features_heatmap":    "image_features_heatmap",
+    "fig1_fd_behaviour":             "fd_effect",
+    "fig2_image_features":           "image_features_heatmap",
+    "fig3_fd_perception":            "animal_vs_body_fd",
+    "fig4_semantic_territory":       "fig3_semantic_territory",
+    "fig5_fd_family":                "fd_family_paper",
+    "fig6_image_consensus":          "image_consensus_fd_paper",
+    "fig7_dat_pre_post":             "dat_before_vs_after",
+    "fig8_dat_behaviour":            "creativity_effects_before",
+    "fig9_diversity":                "fig5cd_diversity",
+    "fig10_human_animal_bias":       "animal_vs_body_dat",
+    "fig11_preferred_categories":    "preferred_categories_combined",
+    "fig12_preferred_categories_fd": "preferred_categories_fd",
+    "fig13_eye_tracking":            "eyetracking_contrasts",
+    # Supplementary panels (not assigned a main-text figure number).
     "fig_image_features_importance": "image_features_importance",
     "fig_image_features_gallery":    "image_features_gallery",
-    "fig_fd_family_paper":           "fd_family_paper",
     "fig_fd_family_heatmap":         "fd_family_heatmap",
     "fig_fd_family_word_strip":      "fd_family_word_strip",
 }
