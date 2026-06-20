@@ -372,10 +372,26 @@ def main(show: bool = True, min_reports: int = 20) -> None:
     print(f"Family coverage: {coverage:.1%} of all reported word tokens\n")
 
     pref = preferred_fd(fams, M)
-    family_order = sorted(fams, key=lambda f: pref[f])
-    print("Preferred FD per family (rate-weighted, smooth → rough):")
-    for f in family_order:
+    print("Rate-weighted preferred FD per family:")
+    for f in sorted(fams, key=lambda f: pref[f]):
         print(f"  {pref[f]:.3f}  {f}")
+
+    # Order families along the smooth-to-rough axis using the per-word
+    # mean of the preferred FD (panel B's own family means). This keeps
+    # panel B's black mean bars monotonically increasing and matches the
+    # ordering used by the source script. Families without any word in
+    # wdf (theoretically possible if no word clears min_reports) fall
+    # back to the rate-weighted preferred FD.
+    wdf = word_preferred_fd(trials, min_reports=min_reports)
+    word_mean = wdf.groupby("family")["preferred_fd"].mean().to_dict()
+    family_order = sorted(fams,
+                           key=lambda f: word_mean.get(f, pref[f]))
+    print("\nPer-word mean preferred FD per family "
+          "(smooth → rough; used for panel ordering):")
+    for f in family_order:
+        m = word_mean.get(f, float("nan"))
+        n = int((wdf["family"] == f).sum())
+        print(f"  {m:.3f}  {f}  (n={n})")
 
     print("\nZ-scored per-family report rate across FD "
           "(the heatmap values, ordered smooth → rough):")
@@ -383,7 +399,6 @@ def main(show: bool = True, min_reports: int = 20) -> None:
                       columns=[FD_LABEL[f] for f in FD_ORDER])
     print(Zt.loc[family_order].to_string())
 
-    wdf = word_preferred_fd(trials, min_reports=min_reports)
     print(f"\nPer-percept preferred FD ({len(wdf)} percepts, "
           f"≥{min_reports} reports): "
           f"range [{wdf['preferred_fd'].min():.2f}, "
