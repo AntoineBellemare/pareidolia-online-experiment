@@ -1,0 +1,100 @@
+word,family,preferred_fd,n_reports
+cave,place / landscape,1.3066666666666675,36
+mountain,place / landscape,1.3321276595744693,47
+river,place / landscape,1.3503030303030301,66
+arm,face / body part,1.3664102564102576,39
+country,place / landscape,1.3794117647058821,68
+kissing,person / people,1.3855555555555563,36
+penis,face / body part,1.3879487179487189,39
+kiss,person / people,1.3899999999999995,70
+island,place / landscape,1.394657534246578,146
+nose,face / body part,1.3988695652173917,115
+hat,object / symbol,1.4077464788732388,71
+lips,face / body part,1.4114634146341474,41
+coastline,place / landscape,1.411818181818182,33
+gorilla,animal,1.4125000000000003,32
+mouth,face / body part,1.4171739130434773,92
+lake,place / landscape,1.4245454545454537,77
+people,person / people,1.4266153846153844,65
+profile,face / body part,1.4272549019607847,51
+hair,face / body part,1.4276000000000009,50
+head,face / body part,1.4276923076923096,156
+foot,face / body part,1.431500000000001,40
+duck,animal,1.4326415094339624,53
+monkey,animal,1.4327027027027035,37
+man,person / people,1.435253623188401,552
+woman,person / people,1.4359279778393346,361
+hand,face / body part,1.438971962616823,107
+faces,face / body part,1.4396385542168668,83
+cross,object / symbol,1.4400000000000008,38
+ocean,place / landscape,1.443673469387755,98
+africa,place / landscape,1.4438235294117645,68
+boy,person / people,1.4440909090909102,44
+person,person / people,1.4469600000000011,250
+camel,animal,1.4470588235294122,34
+lion,animal,1.4486206896551723,58
+land,place / landscape,1.4508988764044934,89
+snake,animal,1.4510909090909092,55
+sea,place / landscape,1.4533333333333338,48
+australia,place / landscape,1.4592307692307689,65
+bear,animal,1.4601538461538461,130
+rhino,animal,1.4608571428571433,35
+lady,person / people,1.4609677419354836,93
+animal,animal,1.4611999999999994,75
+plus,object / symbol,1.461500000000001,40
+continent,place / landscape,1.4616483516483507,91
+cow,animal,1.4616666666666664,60
+water,place / landscape,1.4623456790123448,81
+baby,person / people,1.4635849056603771,106
+elephant,animal,1.4641353383458648,133
+face,face / body part,1.4656028368794245,705
+pig,animal,1.4656756756756761,111
+whale,animal,1.4660000000000004,35
+boot,object / symbol,1.4660416666666658,96
+islands,place / landscape,1.4677777777777772,81
+chicken,animal,1.4682499999999998,80
+dinosaur,animal,1.4694594594594599,111
+wolf,animal,1.4704255319148942,47
+girl,person / people,1.472637362637362,91
+dog,animal,1.4801666666666635,480
+child,person / people,1.4803529411764695,85
+spain,place / landscape,1.4841935483870972,31
+italy,place / landscape,1.4842857142857142,63
+eye,face / body part,1.4851219512195133,41
+bat,animal,1.488214285714286,56
+creature,mythical creature,1.489565217391305,46
+squirrel,animal,1.4900000000000004,33
+alien,mythical creature,1.4910526315789465,95
+cartoon,person / people,1.4945000000000008,40
+bird,animal,1.4950340136054427,147
+rat,animal,1.495454545454546,33
+rabbit,animal,1.4959016393442626,122
+heart,object / symbol,1.4969565217391294,92
+fish,animal,1.4975555555555553,135
+continents,place / landscape,1.4982051282051292,39
+monster,mythical creature,1.4985245901639348,122
+tree,plant,1.4986419753086417,81
+smoke,abstract / texture,1.5037037037037038,54
+mouse,animal,1.5128571428571427,56
+turtle,animal,1.5133333333333336,54
+seahorse,animal,1.5148648648648646,74
+witch,mythical creature,1.5171739130434785,92
+bunny,animal,1.5178947368421063,38
+dragon,mythical creature,1.518500000000001,200
+ink,abstract / texture,1.5223809523809535,42
+sheep,animal,1.522903225806452,31
+cat,animal,1.5231468531468524,143
+lakes,place / landscape,1.5300000000000002,31
+frog,animal,1.5329787234042558,47
+butterfly,animal,1.537826086956522,46
+ghost,mythical creature,1.5399310344827584,145
+eyes,face / body part,1.5442222222222222,90
+crab,animal,1.5460000000000005,35
+horse,animal,1.5466386554621843,119
+dancer,person / people,1.5510526315789483,38
+world,place / landscape,1.5552941176470598,34
+goat,animal,1.5560606060606068,33
+skull,face / body part,1.5665999999999993,100
+sky,place / landscape,1.56764705882353,34
+europe,place / landscape,1.5709523809523809,63
+trees,plant,1.6211764705882363,34

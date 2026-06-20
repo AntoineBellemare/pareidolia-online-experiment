@@ -59,6 +59,15 @@ def cached_parquet(name: str) -> Path:
 # FD levels used in the experiment.
 FD_LEVELS = ["FD12", "FD14", "FD16"]
 
+# Realised fractal dimensions per nominal level, from the standard 2D
+# box-counting method (Liebovitch & Toth 1989) over the 100 generated
+# images per level. Reported in the manuscript as FD ≈ 1.3, 1.5, 1.7;
+# see paper/draft.tex Materials and Methods (Stimuli).
+FD_REALISED = {"FD12": 1.27, "FD14": 1.49, "FD16": 1.67}
+FD_REALISED_SD = {"FD12": 0.012, "FD14": 0.016, "FD16": 0.011}
+# Short display labels for FD axis ticks.
+FD_DISPLAY_LABEL = {"FD12": "FD ≈ 1.3", "FD14": "FD ≈ 1.5", "FD16": "FD ≈ 1.7"}
+
 # Stop-words to drop in semantic analyses (kept from notebook).
 SEMANTIC_STOPWORDS = {
     "nothing", "nothingness", "black", "white", "map", "cloud", "clouds",

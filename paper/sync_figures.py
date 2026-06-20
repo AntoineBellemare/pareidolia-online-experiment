@@ -29,6 +29,16 @@ MAP = {
     "fig6_preferred_categories":    "preferred_categories_combined",
     "fig7_preferred_categories_fd": "preferred_categories_fd",
     "fig8_eye_tracking":            "eyetracking_contrasts",
+    # Pending integration into the manuscript: image-features and
+    # fd-family figures are generated and shipped so the section drafts
+    # in paper/section_*.md can reference them; they will be assigned a
+    # final fig number when spliced into build_preview_pdf.py.
+    "fig_image_features_heatmap":    "image_features_heatmap",
+    "fig_image_features_importance": "image_features_importance",
+    "fig_image_features_gallery":    "image_features_gallery",
+    "fig_fd_family_paper":           "fd_family_paper",
+    "fig_fd_family_heatmap":         "fd_family_heatmap",
+    "fig_fd_family_word_strip":      "fd_family_word_strip",
 }
 
 
