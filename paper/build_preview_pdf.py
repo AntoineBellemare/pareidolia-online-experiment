@@ -26,10 +26,11 @@ h1    { font-size: 17pt; margin-bottom: 0.2em; line-height: 1.25; }
 h2    { font-size: 12.5pt; margin-top: 1.4em; margin-bottom: 0.3em;
          border-bottom: 1px solid #999; padding-bottom: 0.1em;
          text-transform: uppercase; letter-spacing: 0.04em; }
-h3    { font-size: 11pt; margin-top: 1.0em; margin-bottom: 0.2em;
-         font-weight: bold; }
-h4    { font-size: 10.5pt; margin-top: 0.7em; margin-bottom: 0.1em;
-         font-weight: bold; color: #222; }
+h3    { font-size: 11.5pt; margin-top: 1.4em; margin-bottom: 0.4em;
+         font-weight: bold; color: #222;
+         border-bottom: 0.5px solid #ccc; padding-bottom: 0.1em; }
+h4    { font-size: 10.5pt; margin-top: 0.8em; margin-bottom: 0.15em;
+         font-weight: bold; font-style: normal; color: #222; }
 /* PNAS-style declarative result heading: bold lead-in, runs with paragraph */
 .lead { font-weight: bold; }
 p     { text-align: justify; margin: 0 0 0.55em 0; }
@@ -201,7 +202,9 @@ successful pareidolia leave a measurable signature in eye movements?</p>
 
 <h2>Results</h2>
 
-<h3>Image complexity controls the amount of pareidolia.</h3>
+<h3>Image properties shape pareidolia.</h3>
+
+<h4>Image complexity controls the amount of pareidolia.</h4>
 <p>We first asked whether the image's statistical structure modulates
 how readily participants extract a percept. As complexity rose from
 FD12 to FD16, the average number of single words submitted per trial
@@ -225,7 +228,7 @@ percepts.</p>
      "denote significant pair-wise Wilcoxon signed-rank contrasts.",
      "fig1")}
 
-<h3>Image-statistics features predict per-image pareidolia rate.</h3>
+<h4>Image-statistics features predict per-image pareidolia rate.</h4>
 <p>Beyond the discrete FD12/FD14/FD16 contrast, individual stimuli
 within the same FD level varied widely in how often participants
 reported a pareidolic percept (per-image rate range 0.50 to 0.95,
@@ -285,7 +288,7 @@ constructive side of vision.</p>
      "correlation with pareidolia rate.",
      "fig2")}
 
-<h3>Image complexity reshapes the content of pareidolia.</h3>
+<h4>Image complexity reshapes the content of pareidolia.</h4>
 <p>The drop in amount was accompanied by a striking shift in semantic
 content. We assigned every unique percept word to one of fifteen
 seed-based semantic buckets (face, body-part, person, mammal, bird,
@@ -344,7 +347,7 @@ into the abstract and textural periphery.</p>
      "word was produced. Both panels share the same projection.",
      "fig4")}
 
-<h3>Observers match fractal dimension to a percept family's spatial scale.</h3>
+<h4>Each percept family has a preferred fractal dimension.</h4>
 <p>To complement the fifteen-bucket taxonomy of Fig. 3 with a finer
 view oriented around the spatial scale of the meanings extracted, we
 hand-curated eight hierarchically organised percept families spanning
@@ -395,8 +398,8 @@ of the meanings observers extract.</p>
      "59% of all valid percept tokens.",
      "fig5")}
 
-<h3>Observers largely disagree on what they see, but agreement decreases
-with complexity.</h3>
+<h4>Observers largely disagree on what they see, but agreement decreases
+with complexity.</h4>
 <p>Beyond the group-level shifts in modal percept, we asked how much
 individual observers actually converge on the same answer for the same
 image. For every stimulus (300 images, approximately 50 observers each)
@@ -436,7 +439,9 @@ its observers.</p>
      "Brackets denote significant pair-wise Mann-Whitney U contrasts.",
      "fig4")}
 
-<h3>Test-retest reliability of DAT is preserved across the task.</h3>
+<h3>Trait creativity shapes pareidolia content.</h3>
+
+<h4>Test-retest reliability of DAT is preserved across the task.</h4>
 <p>Among the <em>n</em> = 507 participants who completed both DAT
 timepoints (Fig. 7), pre- and post-task scores were positively but
 moderately correlated (Pearson <em>r</em> = 0.19,
@@ -455,7 +460,7 @@ shift induced by the pareidolia task.</p>
      "distribution of the participant-level delta (post minus pre).",
      "fig5a", css_class="narrow")}
 
-<h3>Trait creativity does not predict more or faster pareidolia.</h3>
+<h4>Trait creativity does not predict more or faster pareidolia.</h4>
 <p>Across six general behavioural metrics (fraction of trials
 completed, single words per trial, descriptions per trial, mean
 reaction time, total unique words across the experiment, and mean
@@ -476,8 +481,8 @@ more or faster pareidolia.</p>
      "the time taken to extract them do not covary with creativity.",
      "fig5b", css_class="narrow")}
 
-<h3>Creativity predicts greater perceptual diversity, concentrated at
-intermediate complexity.</h3>
+<h4>Creativity predicts greater perceptual diversity, concentrated at
+intermediate complexity.</h4>
 <p>The within-subject median pair-wise cosine distance of a
 participant's percept embeddings, a participant-level measure of how
 semantically scattered the percepts are, was positively correlated
@@ -500,7 +505,7 @@ greatest expressive room.</p>
      "concentrates at FD14, the middle complexity level.",
      "fig5cd")}
 
-<h3>Creativity biases pareidolia from humans toward animals.</h3>
+<h4>Creativity biases pareidolia from humans toward animals.</h4>
 <p>The same fifteen-bucket taxonomy pinpointed where the link between
 DAT and diversity comes from. The per-participant share of percepts
 falling in human categories (face + body-part + person) was negatively
@@ -519,7 +524,7 @@ from canonical human and face responses and toward animal ones.</p>
      "Fig. 10. Creativity tilts the percept distribution away from "
      "humans and toward animals.", "", "fig5f")}
 
-<h3>Unsupervised clusters separate low- and high-creativity profiles.</h3>
+<h4>Unsupervised clusters separate low- and high-creativity profiles.</h4>
 <p>The human-vs-animal contrast captures one axis along which
 creativity restructures percepts, but the seed-based taxonomy is
 deliberately narrow. To examine the full preference landscape we
@@ -567,7 +572,7 @@ seeing <em>more</em> but as seeing <em>different</em> things.</p>
      "zero. Numbers on the right are word occurrences per cluster.",
      "fig6")}
 
-<h3>The same pipeline reveals a complementary FD preference axis.</h3>
+<h4>The same pipeline reveals a complementary FD preference axis.</h4>
 <p>Repurposing the clustering with stimulus FD level as the contrast
 variable (FD16 vs FD12 instead of high vs low DAT) shows partly
 overlapping but distinct preference geometries (Fig. 12). High-FD
@@ -592,7 +597,9 @@ independent dimensions of the same percept landscape.</p>
      "mark clusters whose CI excludes zero.",
      "fig7")}
 
-<h3>Gaze signatures of successful pareidolia.</h3>
+<h3>Eye-movement signatures of pareidolia.</h3>
+
+<h4>Gaze signatures of successful pareidolia.</h4>
 <p>For the 247 participants who opted in to webcam-based gaze
 recording and produced trials that survived the WebGazer
 tracking-failure check (Materials and Methods), we computed six gaze
@@ -694,158 +701,173 @@ more strictly.</p>
 
 <h2>Materials and Methods</h2>
 
-<h3>Participants.</h3>
-<p>Participants were recruited online via [recruitment platform]; all
-gave informed consent in accordance with the [ethics committee]
-guidelines. The full session was completed by <em>N</em> = 579
-English-speaking adults (the "main cohort"), comprising a demographic
-form, the 10-word Divergent Association Task (Olson et al., 2021) as
-a baseline measure of trait creativity (DAT pre), an optional 9-point
-WebGazer calibration and validation routine, 30 pareidolia trials with
-free-response word entry, a repeated DAT (DAT post; <em>n</em> = 507
-provided a scoreable response), and a closing feedback questionnaire.
-The main cohort analysed below is defined as the intersection of (i)
-English as primary language, (ii) feedback supplied, and (iii) at
-least one valid pareidolia trial. Sessions whose stored DAT word list
-duplicated one of the previous two log entries were removed.</p>
+<h3>Participants and procedure.</h3>
+<p>Approximately 580 English-speaking adults completed the full
+online session after providing informed consent
+([recruitment platform], [ethics committee]). Each session ran in
+this fixed order: a demographic form; the 10-word Divergent
+Association Task (DAT pre; Olson et al., 2021) as a baseline trait-
+creativity measure; an optional 9-point WebGazer calibration and
+validation routine for opt-in eye tracking; 30 pareidolia trials with
+free-response word entry; a repeated DAT (DAT post); and a closing
+feedback questionnaire. A pareidolia trial began with a 500 ms
+fixation cross, followed by the stimulus image presented for up to
+30 s (terminable early with the spacebar); on offset, participants
+filled five short-answer slots labelled "Single words" and five
+longer "Descriptions (optional)" slots with every percept the image
+evoked. When eye tracking was enabled at session start, raw
+(<em>x, y, t</em>) gaze samples were captured throughout image
+presentation via the WebGazer browser extension to jsPsych
+(Papoutsaki et al., 2016; de Leeuw, 2015). The <em>main cohort</em>
+analysed below (<em>n</em> = 579) is the intersection of English as
+primary language, feedback supplied, and at least one valid
+pareidolia trial; <em>n</em> = 507 provided a scoreable DAT post.
+Sessions whose stored DAT word list duplicated one of the previous
+two log entries were removed.</p>
 
 <h3>Stimuli.</h3>
-<p>The stimulus set comprised 30 greyscale fractal-noise images, ten
-at each of three fractal-dimension levels labelled <strong>FD12, FD14,
-FD16</strong> by their generation target. Each image was synthesised
-by filtering 2D Gaussian noise so that its amplitude spectrum
-followed a 1/<em>f</em><sup>β</sup> profile prior to inverse Fourier
-transform; higher FD produces finer-grained spatial detail and lower
-local autocorrelation. The realised fractal dimension of every
-generated image was estimated empirically with the standard 2D
-box-counting method (Liebovitch and Toth, 1989); across the 30 images
-the mean ± SD per nominal level was FD12: 1.27 ± 0.012,
-FD14: 1.49 ± 0.016, FD16: 1.67 ± 0.011 (100 images per level were
-generated and the 10 closest to each target were retained). For
-readability we refer to the three conditions throughout the
-manuscript as FD ≈ 1.3, 1.5, and 1.7. Each participant saw all 30
-images in a fully randomised order, each rendered centred on a white
-viewport with <code>max-width: 55%</code>.</p>
+<p>The stimulus bank comprised 300 greyscale fractal-noise images,
+100 at each of three nominal fractal-dimension levels labelled
+<strong>FD12, FD14, FD16</strong> by their generation target. Each
+image was synthesised by filtering 2D Gaussian noise so that its
+amplitude spectrum followed a 1/<em>f</em><sup>β</sup> profile
+prior to inverse Fourier transform; higher FD produces finer-grained
+spatial detail and lower local autocorrelation. The realised fractal
+dimension of every generated image was estimated with the standard
+2D box-counting method (Liebovitch and Toth, 1989); the mean ± SD per
+nominal level across the 100 images was FD12: 1.27 ± 0.012,
+FD14: 1.49 ± 0.016, FD16: 1.67 ± 0.011. For readability we refer to
+the three conditions as FD ≈ 1.3, 1.5, 1.7. Each participant viewed
+a random sample of 30 stimuli (10 per FD level) in a fully
+randomised order, each rendered centred on a white viewport with
+<code>max-width: 55%</code>.</p>
 
-<h3>Pareidolia task.</h3>
-<p>A pareidolia trial began with a 500 ms central fixation cross,
-followed by the stimulus image presented for up to 30 s, terminated
-early if the participant pressed the spacebar to advance. Immediately
-after stimulus offset a free-text response screen appeared with five
-short-answer slots labelled "Single words" and five longer slots
-labelled "Descriptions (optional)"; participants were instructed to
-write every distinct percept that the image evoked. When eye tracking
-had been enabled at session start, raw (<em>x, y, t</em>) gaze samples
-were captured throughout image presentation via the WebGazer
-browser-side extension to jsPsych.</p>
+<h3>Percept-word preprocessing and embeddings.</h3>
+<p>Each typed entry was lowercased and whitespace-stripped. We kept
+only entries matching <code>^[A-Za-z]+$</code> (single alphabetic
+tokens) and removed the catch-all stopwords <em>nothing, nothingness,
+black, white, map, cloud, clouds</em>. Sentence-level descriptions
+were excluded from semantic analyses to avoid mixing single-word and
+multi-word vector representations. All semantic computations use the
+384-dimensional sentence-transformer embedding (<code>all-MiniLM-L6-v2</code>;
+Reimers and Gurevych, 2019) of every unique surviving percept word
+(<em>n</em><sub>words</sub> = 4,361). At the participant level we
+computed each (participant, FD) cell's <em>semantic spread</em> as
+the median pair-wise cosine distance over their unique embeddings.
+At the image level we computed two inter-observer agreement metrics:
+the <em>modal-word share</em> (proportion of all percepts on the
+image equal to the single most frequent one) and the
+<em>mean cross-observer cosine similarity</em> (average BERT cosine
+between two randomly drawn percepts from different participants on
+the same image, with 400 sampled pairs).</p>
 
-<h3>Percept word preprocessing.</h3>
-<p>Each typed entry was lowercased and whitespace-stripped. To
-minimise contamination by non-percept entries we kept only entries
-matching the regular expression <code>^[A-Za-z]+$</code> (single
-alphabetic tokens without spaces, digits, or punctuation) and
-additionally removed the catch-all stopwords <em>nothing,
-nothingness, black, white, map, cloud, clouds</em>. Sentence-level
-descriptions were excluded from semantic analyses to avoid mixing
-single-word and multi-word vector representations, which occupy
-systematically different regions of embedding space. All semantic
-computations use 384-dimensional sentence-transformer embeddings
-(<code>all-MiniLM-L6-v2</code>) of every unique surviving percept
-word (<em>n</em><sub>words</sub> = 4,361).</p>
+<h3>DAT scoring.</h3>
+<p>Both DAT timepoints were scored with the canonical procedure
+(Olson et al., 2021). For each 10-word list we lowercased and kept
+alphabetic forms, retained the first seven with a GloVe 840B 300-d
+vector (Pennington et al., 2014), and defined the score as
+100 × mean(<em>d<sub>ij</sub></em>), the average cosine distance
+across the C(7, 2) pairs. Sessions producing fewer than seven valid
+lookups yielded no score and were excluded from the corresponding
+timepoint. Unless explicitly noted, "DAT" in the main text refers to
+the pre-task score.</p>
 
-<h3>Divergent Association Task (DAT) scoring.</h3>
-<p>Both DAT pre and DAT post were scored with the canonical Olson et
-al. (2021) procedure. Each set of 10 candidate words was lowercased
-and restricted to alphabetic forms; the first seven words with a
-GloVe 840B 300-d vector were retained, and the DAT score was defined
-as 100 × mean(<em>d<sub>ij</sub></em>), where <em>d<sub>ij</sub></em>
-is the cosine distance between every pair of those seven vectors.
-Sessions producing fewer than seven valid lookups yielded no DAT
-score and were excluded from any analysis using that timepoint. DAT
-scores in main-text analyses refer to the baseline (pre) score unless
-explicitly noted.</p>
+<h3>Image-statistics features.</h3>
+<p>For Fig. 2 we extracted 24 features per stimulus, all
+implemented in <code>numpy</code> and <code>scipy.ndimage</code>:
+(i) intensity statistics (mean, SD, skewness, kurtosis, 64-bin pixel
+entropy); (ii) the radially averaged power-spectrum slope (β of the
+1/<em>f</em><sup>β</sup> fit), the residual SD of that fit, and the
+share of total radial power in three equal-width frequency bands
+(low / mid / high); (iii) Sobel-gradient magnitude (edge mean and SD)
+and the mean and SD of the 16 × 16 local-contrast map;
+(iv) connected components (count, largest, mean and SD of component
+size) under a mean-intensity binarisation; and (v) five symmetry
+measures (left-right and top-bottom pixel symmetry on the raw image,
+gradient-orientation L-R symmetry, 4× downsampled coarse symmetry,
+and Fourier-magnitude L-R symmetry). Each feature was correlated
+with the four image-level pareidolia metrics by Pearson's
+<em>r</em>; a 5-fold cross-validated random-forest regression
+(200 trees, max depth 4, min-samples-leaf 10, standardised inputs)
+predicted per-image pareidolia rate, with permutation importance
+computed over 30 repeats.</p>
 
-<h3>Eye-tracking preprocessing.</h3>
-<p>The online WebGazer calibration sweep provides a dense set of gaze
-samples spanning most of the viewport. For each session, we estimated
-the usable gaze extent as the 1st-to-99th-percentile box of these
-calibration samples and used it to rescale all subsequent gaze data
-into the unit square [0, 1], eliminating cross-session differences in
-screen size and browser viewport. The stimulus region of interest
-(ROI) was approximated as a per-session rectangle centred on the
-recorded stimulus position with half-width 0.275 (half of the
-<code>55%</code> CSS rule) and half-height 0.275 · <em>W/H</em>, where
-<em>W/H</em> is the session's viewport aspect ratio. Trials whose
-normalised gaze trace formed a near-perfect line, defined as
-|corr(<em>x, y</em>)| &gt; 0.97 together with span &gt; 0.6 on both
-axes, a signature of the WebGazer face-mesh tracker failing onto a
-screen edge, were flagged as tracking failures and dropped (530 of
-5,660 trials, 9.4%). Fixations were detected with a
-dispersion-threshold (I-DT) algorithm using a dispersion bound of
-0.05 in normalised coordinates and a minimum duration of 100 ms.</p>
+<h3>Percept categorisation: seed-based and hand-curated taxonomies.</h3>
+<p>Two complementary taxonomies categorise percepts. The first
+(used by Figs. 3 and 10) is a 15-bucket BERT-centroid classifier:
+each unique word is assigned to its nearest seed centroid in
+embedding space (face, body-part, person, mammal, bird,
+fish-aquatic, insect-bug, reptile, creature, object, landscape,
+weather, abstract, food, action), with a minimum cosine ≥ 0.30
+threshold and an explicit hard-reject list preventing high-frequency
+objects (<em>hat, cross, hammer, gun, ball, bat, vase</em>) and
+actions (<em>kiss, kissing, dancing</em>) from being assigned to the
+human or animal buckets. From this assignment we derive a per-
+(participant, FD) <em>human share</em>, <em>animal share</em>, and
+the <em>animal-minus-human bias index</em>
+(<em>A − H</em>) / (<em>A + H</em>). The second taxonomy (used by
+Fig. 5) is a coarser 8-family hand-curated grouping oriented around
+spatial scale (face / body part, person / people, animal, mythical
+creature, plant, place / landscape, object / symbol, abstract /
+texture), covering 59% of all valid tokens. Per-FD report rates per
+family are z-scored across FD; each family's continuous
+<em>preferred FD</em> is the rate-weighted mean of the three
+realised FD values, and a per-percept preferred FD (Fig. 5b) is the
+mean FD of images on which each word ≥ 20 reports was reported.</p>
 
-<h3>Per-participant and per-image semantic metrics.</h3>
-<p>For every participant and every FD level we computed (i) the
-<em>semantic spread</em> of percepts as the median pair-wise cosine
-distance over their unique word embeddings, and (ii) the
-<em>vocabulary surprisal</em> as the mean −log <em>p</em> over the
-corpus frequency of each word. To examine the <em>kind</em> of percept
-rather than its amount, we assigned every unique word to one of
-fifteen semantic categories (<em>face, body-part, person, mammal,
-bird, fish-aquatic, insect-bug, reptile, creature, object, landscape,
-weather, abstract, food, action</em>) by nearest seed-centroid in BERT
-space (minimum cosine ≥ 0.30, otherwise "other"). Seed lists were
-hand-curated and audited against the highest-frequency words in the
-corpus; an explicit hard-reject list prevents a small number of
-items that are close to a human or animal centroid in embedding
-space but are clearly not (objects: <em>hat, cross, hammer, gun, ball,
-bat, vase</em>; actions: <em>kiss, kissing, dancing, dance, hugging</em>;
-landscape: <em>sea, lake, ocean, river</em>) from being assigned to
-those categories; such items are routed to their best non
-human/animal centroid instead. For each (participant, FD) we
-summarised the percept distribution as the <em>human share</em>
-(face + body-part + person), the <em>animal share</em>
-(mammal + bird + fish + insect + reptile), and the <em>animal-minus-human
-bias index</em> (<em>A − H</em>) / (<em>A + H</em>), ranging from −1
-(entirely human) to +1 (entirely animal). At the image level we
-computed the Shannon entropy of the percept-word distribution
-elicited by each stimulus, as a measure of inter-observer consensus.</p>
+<h3>Unsupervised percept clustering.</h3>
+<p>To complement the seed-based view, we clustered every percept
+word that appeared at least three times in the corpus
+(<em>n</em> = 1,110 words). BERT embeddings were L2 normalised,
+reduced to 10 dimensions with UMAP (cosine metric;
+<code>n_neighbors</code> = 15, <code>min_dist</code> = 0;
+McInnes et al., 2018), and clustered with HDBSCAN
+(<code>min_cluster_size</code> = 12, EOM selection;
+Campello et al., 2013), yielding 32 interpretable clusters plus a
+small noise group (22%). Each cluster is labelled by its top four
+log-odds most distinctive words. Per-cluster log-odds (high / low
+DAT tertile or FD16 / FD12) are reported with 95% bootstrap CIs
+(2,000 binomial resamples per cluster).</p>
 
-<h3>Unsupervised clustering of percepts.</h3>
-<p>To complement the seed-based taxonomy with an unsupervised view,
-we clustered every percept word that appeared at least three times in
-the corpus (<em>n</em> = 1,110 words). The BERT embeddings were L2
-normalised, reduced to 10 dimensions with UMAP (cosine metric,
-<code>n_neighbors</code> = 15, <code>min_dist</code> = 0), and
-clustered with HDBSCAN (<code>min_cluster_size</code> = 12,
-<code>cluster_selection_method</code> = EOM). The procedure produced
-32 interpretable clusters plus a noise group (22% of words). Each
-cluster was labelled by its top four log-odds most distinctive words,
-i.e., the words whose probability inside the cluster most exceeds
-their probability outside it.</p>
+<h3>Eye-tracking processing and gaze metrics.</h3>
+<p>The online WebGazer calibration sweep was used per session to
+estimate the usable gaze extent (1st-to-99th-percentile box of
+calibration samples), against which all subsequent gaze data were
+rescaled into the unit square [0, 1]. The stimulus ROI was a
+per-session rectangle centred on the recorded stimulus position with
+half-width 0.275 (half of the <code>55%</code> CSS rule) and
+half-height 0.275 · <em>W/H</em>. Trials whose normalised gaze trace
+formed a near-perfect line (|corr(<em>x, y</em>)| &gt; 0.97 with
+span &gt; 0.6 on both axes), a signature of the WebGazer face-mesh
+tracker failing onto a screen edge, were flagged as tracking
+failures and dropped (530 of 5,660 trials, 9.4%). Fixations were
+detected with the I-DT algorithm (dispersion 0.05 in normalised
+coordinates, minimum duration 100 ms). For Fig. 13 we computed six
+per-trial gaze metrics: fixation count, mean fixation duration,
+total scanpath length, gaze entropy of the 2D gaze histogram, Gini
+concentration of the same histogram, and a recurrence rate
+(fraction of fixation pairs falling within a 0.05 normalised radius
+of one another).</p>
 
 <h3>Statistical analyses.</h3>
 <p>Within-subject effects of FD were tested with Friedman's χ²
 followed by pair-wise Wilcoxon signed-rank contrasts; only contrasts
-significant at <em>P</em> &lt; 0.05 are annotated on the figures
+significant at <em>P</em> &lt; 0.05 are annotated on figures
 (brackets with asterisks). Between-subject DAT effects were tested
-with Pearson's <em>r</em> (reported in the main figures) and
-Spearman's ρ (reported in the companion CSV tables). Before every
-correlation we trimmed bivariate outliers at ±3 SD on both the
-dependent metric and the DAT score; no other transformations were
-applied. For the cluster-preference forest plot, 95% bootstrap CIs
-(2,000 binomial resamples per cluster) were computed on the log-odds
-of the (high/low) tertile share. Statistics are reported as <em>r</em>
-with significance markers
+with Pearson's <em>r</em> (reported in main figures) and Spearman's
+ρ (reported in the supplementary CSV tables). Before every
+correlation we trimmed bivariate outliers at ±3 SD on both axes.
+Statistics are reported as <em>r</em> with significance markers
 (<sup>*</sup><em>P</em> &lt; 0.05,
 <sup>**</sup><em>P</em> &lt; 0.01,
 <sup>***</sup><em>P</em> &lt; 0.001); exact <em>P</em> values and
-Spearman counterparts are given in the supplementary data tables.
-Analyses were performed in Python 3.10 using <code>pandas</code>,
+ρ counterparts are in the supplementary tables. Analyses were
+performed in Python 3.10 using <code>pandas</code>,
 <code>numpy</code>, <code>scipy.stats</code>,
-<code>sentence-transformers</code>, <code>umap-learn</code>, and
-<code>hdbscan</code>; reproducible scripts and CSV outputs are
-available at [URL].</p>
+<code>scikit-learn</code>, <code>sentence-transformers</code>,
+<code>umap-learn</code>, and <code>hdbscan</code>. All scripts,
+parquet caches, and stimulus images are available at
+<a href="https://github.com/AntoineBellemare/pareidolia-online-experiment">github.com/AntoineBellemare/pareidolia-online-experiment</a>.</p>
 
 </body></html>
 """

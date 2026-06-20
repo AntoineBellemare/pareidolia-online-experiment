@@ -116,10 +116,22 @@ function H2(text) {
   });
 }
 function H3(text) {
+  // Thematic Results-section divider OR Methods subsection. Slightly
+  // larger than H4 and with a stronger top margin to act as a group
+  // separator within Results.
   return new Paragraph({
     heading: HeadingLevel.HEADING_3,
-    spacing: { before: 220, after: 80 },
-    children: [new TextRun({ text, bold: true, size: 22 })],
+    spacing: { before: 320, after: 120 },
+    children: [new TextRun({ text, bold: true, size: 24, color: "222222" })],
+    border: { bottom: { style: BorderStyle.SINGLE, size: 4,
+                          color: "BBBBBB", space: 1 } },
+  });
+}
+function H4(text) {
+  // Declarative result subsection (PNAS house style).
+  return new Paragraph({
+    spacing: { before: 200, after: 60 },
+    children: [new TextRun({ text, bold: true, size: 21, color: "222222" })],
   });
 }
 
@@ -330,7 +342,8 @@ children.push(R([
 // ── RESULTS ─────────────────────────────────────────────────────────────────
 children.push(H2("Results"));
 
-children.push(H3("Image complexity controls the amount of pareidolia."));
+children.push(H3("Image properties shape pareidolia."));
+children.push(H4("Image complexity controls the amount of pareidolia."));
 children.push(R([
   { t: "We first asked whether the image’s statistical structure " +
         "modulates how readily participants extract a percept. As " +
@@ -365,7 +378,7 @@ children.push(...fig(
   "Wilcoxon signed-rank contrasts."
 ));
 
-children.push(H3("Image-statistics features predict per-image pareidolia rate."));
+children.push(H4("Image-statistics features predict per-image pareidolia rate."));
 children.push(P(
   "Beyond the discrete FD12/FD14/FD16 contrast, individual stimuli " +
   "within the same FD level varied widely in how often participants " +
@@ -446,7 +459,7 @@ children.push(...fig(
   "correlation with pareidolia rate."
 ));
 
-children.push(H3("Image complexity reshapes the content of pareidolia."));
+children.push(H4("Image complexity reshapes the content of pareidolia."));
 children.push(R([
   { t: "The drop in amount was accompanied by a striking shift in semantic " +
         "content. We assigned every unique percept word to one of fifteen " +
@@ -529,8 +542,7 @@ children.push(...fig(
   430
 ));
 
-children.push(H3("Observers match fractal dimension to a percept " +
-  "family's spatial scale."));
+children.push(H4("Each percept family has a preferred fractal dimension."));
 children.push(P(
   "To complement the fifteen-bucket taxonomy of Fig. 3 with a finer " +
   "view oriented around the spatial scale of the meanings extracted, " +
@@ -596,7 +608,7 @@ children.push(...fig(
   500
 ));
 
-children.push(H3("Observers largely disagree on what they see, but " +
+children.push(H4("Observers largely disagree on what they see, but " +
   "agreement decreases with complexity."));
 children.push(R([
   { t: "Beyond the group-level shifts in modal percept, we asked how " +
@@ -652,7 +664,8 @@ children.push(...fig(
   430
 ));
 
-children.push(H3("Test-retest reliability of DAT is preserved across the task."));
+children.push(H3("Trait creativity shapes pareidolia content."));
+children.push(H4("Test-retest reliability of DAT is preserved across the task."));
 children.push(R([
   { t: "Among the " },
   { t: "n", italic: true },
@@ -685,7 +698,7 @@ children.push(...fig(
   360
 ));
 
-children.push(H3("Trait creativity does not predict more or faster pareidolia."));
+children.push(H4("Trait creativity does not predict more or faster pareidolia."));
 children.push(R([
   { t: "Across six general behavioural metrics (fraction of trials " +
         "completed, single words per trial, descriptions per trial, mean " +
@@ -713,7 +726,7 @@ children.push(...fig(
   360
 ));
 
-children.push(H3("Creativity predicts greater perceptual diversity, " +
+children.push(H4("Creativity predicts greater perceptual diversity, " +
   "concentrated at intermediate complexity."));
 children.push(R([
   { t: "The within-subject median pair-wise cosine distance of a " +
@@ -756,7 +769,7 @@ children.push(...fig(
   "at FD14, the middle complexity level."
 ));
 
-children.push(H3("Creativity biases pareidolia from humans toward animals."));
+children.push(H4("Creativity biases pareidolia from humans toward animals."));
 children.push(R([
   { t: "The same fifteen-bucket taxonomy pinpointed where the link " +
         "between DAT and diversity comes from. The per-participant share " +
@@ -792,7 +805,7 @@ children.push(...fig(
   ""
 ));
 
-children.push(H3("Unsupervised clusters separate low- and high-creativity " +
+children.push(H4("Unsupervised clusters separate low- and high-creativity " +
   "profiles."));
 children.push(R([
   { t: "The human-vs-animal contrast captures one axis along which " +
@@ -866,7 +879,7 @@ children.push(...fig(
   "occurrences per cluster."
 ));
 
-children.push(H3("The same pipeline reveals a complementary FD preference axis."));
+children.push(H4("The same pipeline reveals a complementary FD preference axis."));
 children.push(R([
   { t: "Repurposing the clustering with stimulus FD level as the " +
         "contrast variable (FD16 vs FD12 instead of high vs low DAT) " +
@@ -909,7 +922,8 @@ children.push(...fig(
   "excludes zero."
 ));
 
-children.push(H3("Gaze signatures of successful pareidolia."));
+children.push(H3("Eye-movement signatures of pareidolia."));
+children.push(H4("Gaze signatures of successful pareidolia."));
 children.push(P(
   "For the 247 participants who opted in to webcam-based gaze recording " +
   "and produced trials that survived the WebGazer tracking-failure check " +
@@ -1034,31 +1048,43 @@ children.push(P(
 // ── METHODS ─────────────────────────────────────────────────────────────────
 children.push(H2("Materials and Methods"));
 
-children.push(H3("Participants."));
+children.push(H3("Participants and procedure."));
 children.push(R([
-  { t: "Participants were recruited online via [recruitment platform]; " +
-        "all gave informed consent in accordance with the [ethics " +
-        "committee] guidelines. The full session was completed by " },
-  { t: "N", italic: true },
-  { t: " = 579 English-speaking adults (the “main cohort”), " +
-        "comprising a demographic form, the 10-word Divergent Association " +
-        "Task (Olson et al., 2021) as a baseline measure of trait " +
-        "creativity (DAT pre), an optional 9-point WebGazer calibration " +
-        "and validation routine, 30 pareidolia trials with free-response " +
-        "word entry, a repeated DAT (DAT post; " },
+  { t: "Approximately 580 English-speaking adults completed the full " +
+        "online session after providing informed consent " +
+        "([recruitment platform], [ethics committee]). Each session ran " +
+        "in this fixed order: a demographic form; the 10-word Divergent " +
+        "Association Task (DAT pre; Olson et al., 2021) as a baseline " +
+        "trait-creativity measure; an optional 9-point WebGazer " +
+        "calibration and validation routine for opt-in eye tracking; 30 " +
+        "pareidolia trials with free-response word entry; a repeated DAT " +
+        "(DAT post); and a closing feedback questionnaire. A pareidolia " +
+        "trial began with a 500 ms fixation cross, followed by the " +
+        "stimulus image presented for up to 30 s (terminable early with " +
+        "the spacebar); on offset, participants filled five short-answer " +
+        "slots labelled “Single words” and five longer " +
+        "“Descriptions (optional)” slots with every percept " +
+        "the image evoked. When eye tracking was enabled at session " +
+        "start, raw (" },
+  { t: "x, y, t", italic: true },
+  { t: ") gaze samples were captured throughout image presentation via " +
+        "the WebGazer browser extension to jsPsych (Papoutsaki et al., " +
+        "2016; de Leeuw, 2015). The " },
+  { t: "main cohort", italic: true },
+  { t: " analysed below (" },
   { t: "n", italic: true },
-  { t: " = 507 provided a scoreable response), and a closing feedback " +
-        "questionnaire. The main cohort analysed below is defined as the " +
-        "intersection of (i) English as primary language, (ii) feedback " +
-        "supplied, and (iii) at least one valid pareidolia trial. " +
-        "Sessions whose stored DAT word list duplicated one of the " +
-        "previous two log entries were removed." },
+  { t: " = 579) is the intersection of English as primary language, " +
+        "feedback supplied, and at least one valid pareidolia trial; " },
+  { t: "n", italic: true },
+  { t: " = 507 provided a scoreable DAT post. Sessions whose stored DAT " +
+        "word list duplicated one of the previous two log entries were " +
+        "removed." },
 ]));
 
 children.push(H3("Stimuli."));
 children.push(R([
-  { t: "The stimulus set comprised 30 greyscale fractal-noise images, " +
-        "ten at each of three fractal-dimension levels labelled " },
+  { t: "The stimulus bank comprised 300 greyscale fractal-noise images, " +
+        "100 at each of three nominal fractal-dimension levels labelled " },
   { t: "FD12, FD14, FD16", bold: true },
   { t: " by their generation target. Each image was synthesised by " +
         "filtering 2D Gaussian noise so that its amplitude spectrum " +
@@ -1067,191 +1093,192 @@ children.push(R([
   { t: "β profile prior to inverse Fourier transform; higher FD " +
         "produces finer-grained spatial detail and lower local " +
         "autocorrelation. The realised fractal dimension of every " +
-        "generated image was estimated empirically with the standard 2D " +
-        "box-counting method (Liebovitch and Toth, 1989); across the 30 " +
-        "images the mean ± SD per nominal level was " },
+        "generated image was estimated with the standard 2D box-counting " +
+        "method (Liebovitch and Toth, 1989); the mean ± SD per nominal " +
+        "level across the 100 images was " },
   { t: "FD12: 1.27 ± 0.012, FD14: 1.49 ± 0.016, " +
         "FD16: 1.67 ± 0.011", bold: true },
-  { t: " (100 images per level were generated and the 10 closest to each " +
-        "target were retained). For readability we refer to the three " +
-        "conditions throughout the manuscript as FD ≈ 1.3, 1.5, and " +
-        "1.7. Each participant saw all 30 images in a fully randomised " +
-        "order, each rendered centred on a white viewport with " },
+  { t: ". For readability we refer to the three conditions as " +
+        "FD ≈ 1.3, 1.5, 1.7. Each participant viewed a random sample " +
+        "of 30 stimuli (10 per FD level) in a fully randomised order, " +
+        "each rendered centred on a white viewport with " },
   { t: "max-width: 55%", code: true },
   { t: "." },
 ]));
 
-children.push(H3("Pareidolia task."));
+children.push(H3("Percept-word preprocessing and embeddings."));
 children.push(R([
-  { t: "A pareidolia trial began with a 500 ms central fixation cross, " +
-        "followed by the stimulus image presented for up to 30 s, " +
-        "terminated early if the participant pressed the spacebar to " +
-        "advance. Immediately after stimulus offset a free-text response " +
-        "screen appeared with five short-answer slots labelled " +
-        "“Single words” and five longer slots labelled " +
-        "“Descriptions (optional)”; participants were " +
-        "instructed to write every distinct percept that the image " +
-        "evoked. When eye tracking had been enabled at session start, " +
-        "raw (" },
-  { t: "x, y, t", italic: true },
-  { t: ") gaze samples were captured throughout image presentation via " +
-        "the WebGazer browser-side extension to jsPsych." },
-]));
-
-children.push(H3("Percept word preprocessing."));
-children.push(R([
-  { t: "Each typed entry was lowercased and whitespace-stripped. To " +
-        "minimise contamination by non-percept entries we kept only " +
-        "entries matching the regular expression " },
+  { t: "Each typed entry was lowercased and whitespace-stripped. We " +
+        "kept only entries matching " },
   { t: "^[A-Za-z]+$", code: true },
-  { t: " (single alphabetic tokens without spaces, digits, or " +
-        "punctuation) and additionally removed the catch-all stopwords " },
+  { t: " (single alphabetic tokens) and removed the catch-all stopwords " },
   { t: "nothing, nothingness, black, white, map, cloud, clouds",
     italic: true },
   { t: ". Sentence-level descriptions were excluded from semantic " +
         "analyses to avoid mixing single-word and multi-word vector " +
-        "representations, which occupy systematically different regions " +
-        "of embedding space. All semantic computations use 384-" +
-        "dimensional sentence-transformer embeddings (" },
+        "representations. All semantic computations use the 384-" +
+        "dimensional sentence-transformer embedding (" },
   { t: "all-MiniLM-L6-v2", code: true },
-  { t: ") of every unique surviving percept word (" },
+  { t: "; Reimers and Gurevych, 2019) of every unique surviving percept " +
+        "word (" },
   { t: "n", italic: true },
   { t: "words", sub: true },
-  { t: " = 4,361)." },
-]));
-
-children.push(H3("Divergent Association Task (DAT) scoring."));
-children.push(R([
-  { t: "Both DAT pre and DAT post were scored with the canonical Olson " +
-        "et al. (2021) procedure. Each set of 10 candidate words was " +
-        "lowercased and restricted to alphabetic forms; the first seven " +
-        "words with a GloVe 840B 300-d vector were retained, and the " +
-        "DAT score was defined as 100 × mean(" },
-  { t: "d", italic: true },
-  { t: "ij", sub: true, italic: true },
-  { t: "), where " },
-  { t: "d", italic: true },
-  { t: "ij", sub: true, italic: true },
-  { t: " is the cosine distance between every pair of those seven " +
-        "vectors. Sessions producing fewer than seven valid lookups " +
-        "yielded no DAT score and were excluded from any analysis using " +
-        "that timepoint. DAT scores in main-text analyses refer to the " +
-        "baseline (pre) score unless explicitly noted." },
-]));
-
-children.push(H3("Eye-tracking preprocessing."));
-children.push(R([
-  { t: "The online WebGazer calibration sweep provides a dense set of " +
-        "gaze samples spanning most of the viewport. For each session, " +
-        "we estimated the usable gaze extent as the 1st-to-99th-" +
-        "percentile box of these calibration samples and used it to " +
-        "rescale all subsequent gaze data into the unit square [0, 1], " +
-        "eliminating cross-session differences in screen size and " +
-        "browser viewport. The stimulus region of interest (ROI) was " +
-        "approximated as a per-session rectangle centred on the recorded " +
-        "stimulus position with half-width 0.275 (half of the " },
-  { t: "55%", code: true },
-  { t: " CSS rule) and half-height 0.275 · " },
-  { t: "W/H", italic: true },
-  { t: ", where " },
-  { t: "W/H", italic: true },
-  { t: " is the session’s viewport aspect ratio. Trials whose " +
-        "normalised gaze trace formed a near-perfect line, defined as " +
-        "|corr(" },
-  { t: "x, y", italic: true },
-  { t: ")| > 0.97 together with span > 0.6 on both axes, a signature " +
-        "of the WebGazer face-mesh tracker failing onto a screen edge, " +
-        "were flagged as tracking failures and dropped (530 of 5,660 " +
-        "trials, 9.4%). Fixations were detected with a dispersion-" +
-        "threshold (I-DT) algorithm using a dispersion bound of 0.05 in " +
-        "normalised coordinates and a minimum duration of 100 ms." },
-]));
-
-children.push(H3("Per-participant and per-image semantic metrics."));
-children.push(R([
-  { t: "For every participant and every FD level we computed (i) the " },
+  { t: " = 4,361). At the participant level we computed each " +
+        "(participant, FD) cell’s " },
   { t: "semantic spread", italic: true },
-  { t: " of percepts as the median pair-wise cosine distance over their " +
-        "unique word embeddings, and (ii) the " },
-  { t: "vocabulary surprisal", italic: true },
-  { t: " as the mean −log " },
-  { t: "p", italic: true },
-  { t: " over the corpus frequency of each word. To examine the " },
-  { t: "kind", italic: true },
-  { t: " of percept rather than its amount, we assigned every unique " +
-        "word to one of fifteen semantic categories (" },
+  { t: " as the median pair-wise cosine distance over their unique " +
+        "embeddings. At the image level we computed two inter-observer " +
+        "agreement metrics: the " },
+  { t: "modal-word share", italic: true },
+  { t: " (proportion of all percepts on the image equal to the single " +
+        "most frequent one) and the " },
+  { t: "mean cross-observer cosine similarity", italic: true },
+  { t: " (average BERT cosine between two randomly drawn percepts from " +
+        "different participants on the same image, 400 sampled pairs)." },
+]));
+
+children.push(H3("DAT scoring."));
+children.push(R([
+  { t: "Both DAT timepoints were scored with the canonical procedure " +
+        "(Olson et al., 2021). For each 10-word list we lowercased and " +
+        "kept alphabetic forms, retained the first seven with a GloVe " +
+        "840B 300-d vector (Pennington et al., 2014), and defined the " +
+        "score as 100 × mean(" },
+  { t: "d", italic: true },
+  { t: "ij", sub: true, italic: true },
+  { t: "), the average cosine distance across the C(7, 2) pairs. " +
+        "Sessions producing fewer than seven valid lookups yielded no " +
+        "score and were excluded from the corresponding timepoint. " +
+        "Unless explicitly noted, “DAT” in the main text " +
+        "refers to the pre-task score." },
+]));
+
+children.push(H3("Image-statistics features."));
+children.push(R([
+  { t: "For Fig. 2 we extracted 24 features per stimulus, all " +
+        "implemented in " },
+  { t: "numpy", code: true },
+  { t: " and " },
+  { t: "scipy.ndimage", code: true },
+  { t: ": (i) intensity statistics (mean, SD, skewness, kurtosis, 64-" +
+        "bin pixel entropy); (ii) the radially averaged power-spectrum " +
+        "slope (β of the 1/" },
+  { t: "f", italic: true },
+  { t: "β fit), the residual SD of that fit, and the share of total " +
+        "radial power in three equal-width frequency bands " +
+        "(low / mid / high); (iii) Sobel-gradient magnitude (edge mean " +
+        "and SD) and the mean and SD of the 16 × 16 local-contrast " +
+        "map; (iv) connected components (count, largest, mean and SD of " +
+        "component size) under a mean-intensity binarisation; and (v) " +
+        "five symmetry measures (left-right and top-bottom pixel " +
+        "symmetry on the raw image, gradient-orientation L-R symmetry, " +
+        "4× downsampled coarse symmetry, and Fourier-magnitude L-R " +
+        "symmetry). Each feature was correlated with the four image-" +
+        "level pareidolia metrics by Pearson’s " },
+  { t: "r", italic: true },
+  { t: "; a 5-fold cross-validated random-forest regression (200 trees, " +
+        "max depth 4, min-samples-leaf 10, standardised inputs) " +
+        "predicted per-image pareidolia rate, with permutation " +
+        "importance computed over 30 repeats." },
+]));
+
+children.push(H3("Percept categorisation: seed-based and hand-curated taxonomies."));
+children.push(R([
+  { t: "Two complementary taxonomies categorise percepts. The first " +
+        "(used by Figs. 3 and 10) is a 15-bucket BERT-centroid " +
+        "classifier: each unique word is assigned to its nearest seed " +
+        "centroid in embedding space (" },
   { t: "face, body-part, person, mammal, bird, fish-aquatic, insect-bug, " +
         "reptile, creature, object, landscape, weather, abstract, food, " +
         "action", italic: true },
-  { t: ") by nearest seed-centroid in BERT space (minimum cosine " +
-        "≥ 0.30, otherwise “other”). Seed lists were " +
-        "hand-curated and audited against the highest-frequency words " +
-        "in the corpus; an explicit hard-reject list prevents a small " +
-        "number of items that are close to a human or animal centroid " +
-        "in embedding space but are clearly not (objects: " },
+  { t: "), with a minimum cosine ≥ 0.30 threshold and an explicit " +
+        "hard-reject list preventing high-frequency objects (" },
   { t: "hat, cross, hammer, gun, ball, bat, vase", italic: true },
-  { t: "; actions: " },
-  { t: "kiss, kissing, dancing, dance, hugging", italic: true },
-  { t: "; landscape: " },
-  { t: "sea, lake, ocean, river", italic: true },
-  { t: ") from being assigned to those categories; such items are " +
-        "routed to their best non human/animal centroid instead. For " +
-        "each (participant, FD) we summarised the percept distribution " +
-        "as the " },
+  { t: ") and actions (" },
+  { t: "kiss, kissing, dancing", italic: true },
+  { t: ") from being assigned to the human or animal buckets. From this " +
+        "assignment we derive a per-(participant, FD) " },
   { t: "human share", italic: true },
-  { t: " (face + body-part + person), the " },
+  { t: ", " },
   { t: "animal share", italic: true },
-  { t: " (mammal + bird + fish + insect + reptile), and the " },
+  { t: ", and the " },
   { t: "animal-minus-human bias index", italic: true },
   { t: " (" },
   { t: "A − H", italic: true },
   { t: ") / (" },
   { t: "A + H", italic: true },
-  { t: "), ranging from −1 (entirely human) to +1 (entirely " +
-        "animal). At the image level we computed the Shannon entropy of " +
-        "the percept-word distribution elicited by each stimulus, as a " +
-        "measure of inter-observer consensus." },
+  { t: "). The second taxonomy (used by Fig. 5) is a coarser 8-family " +
+        "hand-curated grouping oriented around spatial scale (face / " +
+        "body part, person / people, animal, mythical creature, plant, " +
+        "place / landscape, object / symbol, abstract / texture), " +
+        "covering 59% of all valid tokens. Per-FD report rates per " +
+        "family are z-scored across FD; each family’s continuous " },
+  { t: "preferred FD", italic: true },
+  { t: " is the rate-weighted mean of the three realised FD values, " +
+        "and a per-percept preferred FD (Fig. 5b) is the mean FD of " +
+        "images on which each word with ≥ 20 reports was reported." },
 ]));
 
-children.push(H3("Unsupervised clustering of percepts."));
+children.push(H3("Unsupervised percept clustering."));
 children.push(R([
-  { t: "To complement the seed-based taxonomy with an unsupervised " +
-        "view, we clustered every percept word that appeared at least " +
-        "three times in the corpus (" },
+  { t: "To complement the seed-based view, we clustered every percept " +
+        "word that appeared at least three times in the corpus (" },
   { t: "n", italic: true },
-  { t: " = 1,110 words). The BERT embeddings were L2 normalised, " +
-        "reduced to 10 dimensions with UMAP (cosine metric, " },
+  { t: " = 1,110 words). BERT embeddings were L2 normalised, reduced " +
+        "to 10 dimensions with UMAP (cosine metric; " },
   { t: "n_neighbors", code: true },
   { t: " = 15, " },
   { t: "min_dist", code: true },
-  { t: " = 0), and clustered with HDBSCAN (" },
+  { t: " = 0; McInnes et al., 2018), and clustered with HDBSCAN (" },
   { t: "min_cluster_size", code: true },
-  { t: " = 12, " },
-  { t: "cluster_selection_method", code: true },
-  { t: " = EOM). The procedure produced 32 interpretable clusters plus " +
-        "a noise group (22% of words). Each cluster was labelled by its " +
-        "top four log-odds most distinctive words, i.e., the words " +
-        "whose probability inside the cluster most exceeds their " +
-        "probability outside it." },
+  { t: " = 12, EOM selection; Campello et al., 2013), yielding 32 " +
+        "interpretable clusters plus a small noise group (22%). Each " +
+        "cluster is labelled by its top four log-odds most distinctive " +
+        "words. Per-cluster log-odds (high / low DAT tertile or FD16 / " +
+        "FD12) are reported with 95% bootstrap CIs (2,000 binomial " +
+        "resamples per cluster)." },
+]));
+
+children.push(H3("Eye-tracking processing and gaze metrics."));
+children.push(R([
+  { t: "The online WebGazer calibration sweep was used per session to " +
+        "estimate the usable gaze extent (1st-to-99th-percentile box of " +
+        "calibration samples), against which all subsequent gaze data " +
+        "were rescaled into the unit square [0, 1]. The stimulus ROI " +
+        "was a per-session rectangle centred on the recorded stimulus " +
+        "position with half-width 0.275 (half of the " },
+  { t: "55%", code: true },
+  { t: " CSS rule) and half-height 0.275 · " },
+  { t: "W/H", italic: true },
+  { t: ". Trials whose normalised gaze trace formed a near-perfect " +
+        "line (|corr(" },
+  { t: "x, y", italic: true },
+  { t: ")| > 0.97 with span > 0.6 on both axes), a signature of the " +
+        "WebGazer face-mesh tracker failing onto a screen edge, were " +
+        "flagged as tracking failures and dropped (530 of 5,660 " +
+        "trials, 9.4%). Fixations were detected with the I-DT " +
+        "algorithm (dispersion 0.05 in normalised coordinates, minimum " +
+        "duration 100 ms). For Fig. 13 we computed six per-trial gaze " +
+        "metrics: fixation count, mean fixation duration, total " +
+        "scanpath length, gaze entropy of the 2D gaze histogram, Gini " +
+        "concentration of the same histogram, and a recurrence rate " +
+        "(fraction of fixation pairs falling within a 0.05 normalised " +
+        "radius of one another)." },
 ]));
 
 children.push(H3("Statistical analyses."));
 children.push(R([
   { t: "Within-subject effects of FD were tested with Friedman’s " +
-        "χ² followed by pair-wise Wilcoxon signed-rank " +
-        "contrasts; only contrasts significant at " },
+        "χ² followed by pair-wise Wilcoxon signed-rank contrasts; " +
+        "only contrasts significant at " },
   { t: "P", italic: true },
-  { t: " < 0.05 are annotated on the figures (brackets with asterisks). " +
+  { t: " < 0.05 are annotated on figures (brackets with asterisks). " +
         "Between-subject DAT effects were tested with Pearson’s " },
   { t: "r", italic: true },
-  { t: " (reported in the main figures) and Spearman’s ρ " +
-        "(reported in the companion CSV tables). Before every " +
-        "correlation we trimmed bivariate outliers at ±3 SD on " +
-        "both the dependent metric and the DAT score; no other " +
-        "transformations were applied. For the cluster-preference forest " +
-        "plot, 95% bootstrap CIs (2,000 binomial resamples per cluster) " +
-        "were computed on the log-odds of the (high/low) tertile share. " +
-        "Statistics are reported as " },
+  { t: " (reported in main figures) and Spearman’s ρ (reported in " +
+        "the supplementary CSV tables). Before every correlation we " +
+        "trimmed bivariate outliers at ±3 SD on both axes. Statistics " +
+        "are reported as " },
   { t: "r", italic: true },
   { t: " with significance markers (" },
   { t: "*", sup: true },
@@ -1264,15 +1291,18 @@ children.push(R([
   { t: "P", italic: true },
   { t: " < 0.001); exact " },
   { t: "P", italic: true },
-  { t: " values and Spearman counterparts are given in the supplementary " +
-        "data tables. Analyses were performed in Python 3.10 using " },
+  { t: " values and ρ counterparts are in the supplementary tables. " +
+        "Analyses were performed in Python 3.10 using " },
   { t: "pandas", code: true }, { t: ", " },
   { t: "numpy", code: true }, { t: ", " },
   { t: "scipy.stats", code: true }, { t: ", " },
+  { t: "scikit-learn", code: true }, { t: ", " },
   { t: "sentence-transformers", code: true }, { t: ", " },
   { t: "umap-learn", code: true }, { t: ", and " },
   { t: "hdbscan", code: true },
-  { t: "; reproducible scripts and CSV outputs are available at [URL]." },
+  { t: ". All scripts, parquet caches, and stimulus images are " +
+        "available at " +
+        "github.com/AntoineBellemare/pareidolia-online-experiment." },
 ]));
 
 // ── build document ──────────────────────────────────────────────────────────
